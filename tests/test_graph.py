@@ -47,3 +47,25 @@ class GraphTest(unittest.TestCase):
                 "c": ["a"]
             }
         )
+
+    def test_num_of_vertices_with_odd_degree(self):
+        graph = get_simple_graph()
+        assert graph.number_of_vertices_with_odd_degree() == 2, "a and c should be of odd degree"
+
+        graph = Graph(
+            ("a", "b"),
+            ("b", "c"),
+            ("c", "d")
+        )
+        assert graph.number_of_vertices_with_odd_degree() == 2, "a and d should be of odd degree"
+
+    def test_r_regular(self):
+        graph = get_simple_graph()
+        r = graph.r_regular()
+        assert r is None, f"{graph.get_adjacency_list()} should not be regular but r was {r}"
+        graph = Graph(
+            ("a", "b"),
+            ("b", "c"),
+            ("c", "a"),
+        )
+        assert graph.r_regular() == 2
