@@ -57,3 +57,11 @@ class Graph(DiGraph[T]):
 
     def is_cycle(self, *nodes:T)->bool:
         return self.is_path(*nodes, nodes[0])
+
+    def get_edge_set(self) -> set[tuple[T, T]]:
+        edge_set: set[tuple[int, int]] = set()
+        for from_v, adjacent_vs in self._adjacency_list.items():
+            for adjacent in adjacent_vs:
+                if (from_v, adjacent) not in edge_set and (adjacent, from_v) not in edge_set:
+                    edge_set.add((from_v, adjacent))
+        return set((self.labels[from_i], self.labels[to_i]) for (from_i, to_i) in edge_set)
