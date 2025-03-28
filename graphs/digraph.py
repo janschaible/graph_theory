@@ -16,12 +16,6 @@ class DiGraph(Generic[T]):
         self._adjacency_list.setdefault(index, [])
         return index
 
-    def add_edge(self, from_v: T, to_v: T)->None:
-        from_index = self._get_or_create_vertex(from_v)
-        to_index = self._get_or_create_vertex(to_v)
-        assert to_index not in self._adjacency_list[from_index], f"edge from {from_v} to {to_v} is already present"
-        self._adjacency_list[from_index].append(to_index)
-
     def delete_vertex(self, v: T):
         index = self._get_index_of(v)
         assert index is not None, f"Tried to delete vertex that was not there {v}"
@@ -30,13 +24,22 @@ class DiGraph(Generic[T]):
             if index in adjacent:
                 adjacent.remove(index)
 
+    def add_edge(self, from_v: T, to_v: T)->None:
+        from_index = self._get_or_create_vertex(from_v)
+        to_index = self._get_or_create_vertex(to_v)
+        assert to_index not in self._adjacency_list[from_index], f"edge from {from_v} to {to_v} is already present"
+        self._adjacency_list[from_index].append(to_index)
+
     def delete_edge(self, from_v: T, to_v: T):
-        from_index = self._get_index_of(from_v)
-        to_index = self._get_index_of(to_v)
-        assert from_index is not None, f"there is no vertex {from_v}"
-        assert to_index is not None, f"there is no vertex {from_v}"
+        from_index = self.get_present_index_of(from_v)
+        to_index = self.get_present_index_of(to_v)
         assert to_index in self._adjacency_list[from_index], f"tried to delete invalid edge {from_v} to {to_v}"
         self._adjacency_list[from_index].remove(to_index)
+    
+    def exists_edge(self, from_v: T, to_v: T)->bool:
+        from_index = self._get_index_of(from_v)
+        to_index = self._get_index_of(to_v)
+        return from_index is not None and to_index in self._adjacency_list[from_index]
 
     def get_adjacency_list(self)->dict[T, list[T]]:
         adjacency_list:dict[T, list[T]] = {}
@@ -54,6 +57,12 @@ class DiGraph(Generic[T]):
         if len(self.labels) == 0:
             return 0
         return max(self.labels.keys()) + 1
+
+    def get_present_index_of(self, vertex: T)->int:
+        index = self._get_index_of(vertex)
+        assert index is not None, f"required index {vertex} to be present"
+        return index
+
 
     def _get_index_of(self, vertex: T)->Optional[int]:
         for k,v in self.labels.items():

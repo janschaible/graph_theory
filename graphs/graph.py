@@ -34,3 +34,26 @@ class Graph(DiGraph[T]):
         if len(degrees) != 1:
             return None
         return list(degrees)[0]
+
+    def is_path(self, *nodes:T)->bool:
+        assert len(nodes) >= 2, "path must contain at least two nodes"
+        visited: set[T] = set()
+        visited.add(nodes[0])
+        traveled_edges: dict[T, list[T]] = {}
+
+        for i in range(1, len(nodes)):
+            if nodes[i] in visited and i != len(nodes) - 1:
+                return False
+            visited.add(nodes[i])
+            if not self.exists_edge(nodes[i-1], nodes[i]):
+                return False
+            traveled_edge = nodes[i] in traveled_edges.get(nodes[i-1], [])
+            if traveled_edge:
+                return False
+            traveled_edges.setdefault(nodes[i], []).append(nodes[i-1])
+            traveled_edges.setdefault(nodes[i-1], []).append(nodes[i])
+
+        return True
+
+    def is_cycle(self, *nodes:T)->bool:
+        return self.is_path(*nodes, nodes[0])
