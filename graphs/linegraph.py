@@ -23,6 +23,9 @@ class LineGraphVertex(Generic[T]):
         s2 = set([other.from_original, other.to_original])
         return not s1.isdisjoint(s2)
 
+    def __str__(self) -> str:
+        return f"{self.from_original}{self.to_original}"
+
 
 def get_line_graph[T](original: Graph[T])->Graph[LineGraphVertex[T]]:
     edges_of_new_graph: list[tuple[LineGraphVertex[T], LineGraphVertex[T]]] = []

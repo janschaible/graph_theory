@@ -1,5 +1,5 @@
-import unittest
-
+from typing import override
+from tests.graph_test import AbstractGraphTest
 from graphs.graph import Graph
 
 def get_simple_graph()-> Graph[str]:
@@ -14,11 +14,11 @@ def get_cyclic_graph(node_count: int) -> Graph[str]:
     edges.append((edges[0][0], edges[-1][-1]))
     return Graph(*edges)
 
-class GraphTest(unittest.TestCase):
-    def assert_graph_equal[T](self, graph: Graph[T], expected: dict[T, list[T]]):
-        adjacency_list = graph.get_adjacency_list()
-        assert adjacency_list == expected, f"expected: {expected}, \ngot:{adjacency_list}"
+class TestGraph(AbstractGraphTest):
 
+    @override
+    def get_render_dir(self) -> str:
+        return "test_graph"
 
     def test_construction(self):
         graph = get_simple_graph()

@@ -1,5 +1,5 @@
-import unittest
-
+from typing import override
+from tests.graph_test import AbstractGraphTest
 from graphs.digraph import DiGraph
 
 def get_simple_graph()-> DiGraph[str]:
@@ -9,11 +9,10 @@ def get_simple_graph()-> DiGraph[str]:
             ("b", "a")
         )
 
-class DigraphTest(unittest.TestCase):
-    def assert_graph_equal[T](self, graph: DiGraph[T], expected: dict[T, list[T]]):
-        adjacency_list = graph.get_adjacency_list()
-        assert adjacency_list == expected, f"expected: {expected}, \ngot:{adjacency_list}"
-
+class TestDigraph(AbstractGraphTest):
+    @override
+    def get_render_dir(self) -> str:
+        return "test_linegraph"
 
     def test_construction(self):
         graph = get_simple_graph()
@@ -25,6 +24,7 @@ class DigraphTest(unittest.TestCase):
                 "c": []
             }
         )
+        self.render(graph, "test_construction")
 
     def test_delete_edge(self):
         graph = get_simple_graph()

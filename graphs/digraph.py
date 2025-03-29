@@ -1,4 +1,6 @@
 from typing import Generic, TypeVar, Optional
+import pathlib
+import graphviz
 
 T = TypeVar("T")
 
@@ -69,4 +71,15 @@ class DiGraph(Generic[T]):
             if v == vertex:
                 return k
         return None
+    
+    def render(self, location: str):
+        dot = graphviz.Digraph()
+        for k, l in self.labels.items():
+            dot.node(str(k), str(l))
+        
+        for k, adjacent_list in self._adjacency_list.items():
+            for adjacent in adjacent_list:
+                dot.edge(str(k), str(adjacent))
 
+        pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
+        dot.render(location, format="png")

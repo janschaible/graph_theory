@@ -1,5 +1,7 @@
 from typing import TypeVar, override, Optional
 from graphs.digraph import DiGraph
+import graphviz
+import pathlib
 
 T = TypeVar("T")
 
@@ -65,3 +67,15 @@ class Graph(DiGraph[T]):
                 if (from_v, adjacent) not in edge_set and (adjacent, from_v) not in edge_set:
                     edge_set.add((from_v, adjacent))
         return set((self.labels[from_i], self.labels[to_i]) for (from_i, to_i) in edge_set)
+    
+    @override
+    def render(self, location: str):
+        dot = graphviz.Graph()
+        for l in self.labels.values():
+            dot.node(str(l))
+        
+        for edge_from, edge_to in self.get_edge_set():
+            dot.edge(str(edge_from), str(edge_to))
+
+        pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
+        dot.render(location, format="png")
