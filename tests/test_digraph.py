@@ -10,9 +10,9 @@ def get_simple_graph()-> DiGraph[str]:
         )
 
 class TestDigraph(AbstractGraphTest):
-    @override
-    def get_render_dir(self) -> str:
-        return "test_linegraph"
+    @classmethod
+    def get_render_dir(cls) -> str:
+        return "test_digraph"
 
     def test_construction(self):
         graph = get_simple_graph()

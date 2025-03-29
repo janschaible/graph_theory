@@ -16,8 +16,8 @@ def get_cyclic_graph(node_count: int) -> Graph[str]:
 
 class TestGraph(AbstractGraphTest):
 
-    @override
-    def get_render_dir(self) -> str:
+    @classmethod
+    def get_render_dir(cls) -> str:
         return "test_graph"
 
     def test_construction(self):
@@ -30,6 +30,7 @@ class TestGraph(AbstractGraphTest):
                 "c": ["a"]
             }
         )
+        self.render(graph, "test_construction")
 
     def test_delete_edge(self):
         graph = get_simple_graph()

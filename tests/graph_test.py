@@ -5,18 +5,14 @@ import unittest
 import pprint
 
 class AbstractGraphTest(unittest.TestCase):
-    def get_render_dir(self)->str:
+    @classmethod
+    def get_render_dir(cls) -> str:
         raise Exception("must be implementex by sub classes")
 
-    def setUp(self):
-        self.render_dir = f"./tests/test_graphs/{self.get_render_dir()}"
-        self._clear_render_dir()
-         
-
-    def _clear_render_dir(self):
-        path = Path(self.render_dir)
-        if path.exists() and path.is_dir():
-            shutil.rmtree(path)
+    @classmethod
+    def setUpClass(cls):
+        cls.render_dir = f"./tests/test_graphs/{cls.get_render_dir()}"
+        _clear_render_dir(cls.render_dir)
     
     def assert_graph_equal[T](self, graph: DiGraph[T], expected: dict[T, list[T]]):
             adjacency_list = graph.get_adjacency_list()
@@ -30,3 +26,9 @@ class AbstractGraphTest(unittest.TestCase):
 
     def render[T](self, graph: DiGraph[T], graph_name: str):
         graph.render(f"{self.render_dir}/{graph_name}")
+
+
+def _clear_render_dir(render_dir):
+    path = Path(render_dir)
+    if path.exists() and path.is_dir():
+        shutil.rmtree(path)

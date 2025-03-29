@@ -16,8 +16,8 @@ def get_k_graph(node_count: int) -> Graph[str]:
     return Graph(*edges)
 
 class TestLineGraph(AbstractGraphTest):
-    @override
-    def get_render_dir(self) -> str:
+    @classmethod
+    def get_render_dir(cls) -> str:
         return "test_linegraph"
 
     def test_construction(self):
