@@ -22,6 +22,10 @@ class AbstractGraphTest(unittest.TestCase):
             expected_set = {k: set(v) for k, v in expected.items()}
             
             assert adjacency_set == expected_set, f"expected: {pprint.pformat(expected)}, \ngot:{pprint.pformat(adjacency_list)}"
+    
+    def get_error_message[T](self, message: str, graph: DiGraph[T]) -> str:
+         return f"{message}: {pprint.pformat(graph.get_adjacency_list())}"
+         
 
 
     def render[T](self, graph: DiGraph[T], graph_name: str):

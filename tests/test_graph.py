@@ -78,8 +78,21 @@ class TestGraph(AbstractGraphTest):
         assert graph.is_path("a", "b", "c")
         assert not graph.is_path("a", "b", "d")
         assert not Graph(("a", "b"), ("b", "c"), ("c", "a"), ("a", "d")).is_path("a", "b", "d")
+        self.render(graph, "test_is_path")
 
     def test_is_cycle(self):
         graph = get_cyclic_graph(3)
         assert graph.is_cycle("a", "b", "c")
         assert not graph.is_cycle("a", "b")
+
+    def test_is_euler_tour(self):
+        graph = Graph(
+            ("a", "b"),
+            ("b", "c"),
+            ("c", "a"),
+            ("a", "d"),
+        )
+        assert graph.is_euler_tour("a", "b", "c", "a") == False
+        graph.delete_vertex("d")
+        assert graph.is_euler_tour("a", "b", "c", "a")
+        assert graph.is_euler_tour("a", "b", "c", "b", "c" "a") == False

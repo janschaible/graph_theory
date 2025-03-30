@@ -1,5 +1,6 @@
 from typing import TypeVar, override, Optional
 from graphs.digraph import DiGraph
+from copy import deepcopy
 import graphviz
 import pathlib
 
@@ -68,6 +69,22 @@ class Graph(DiGraph[T]):
                     edge_set.add((from_v, adjacent))
         return set((self.labels[from_i], self.labels[to_i]) for (from_i, to_i) in edge_set)
     
+    def is_euler_tour(self, *nodes: T)-> bool:
+        if nodes[0] != nodes[-1]:
+            return False
+        adjacency_list = deepcopy(self._adjacency_list)
+        for i in range(1, len(nodes)):
+            from_v = self._get_index_of(nodes[i-1])
+            to_v = self._get_index_of(nodes[i])
+            if from_v not in adjacency_list or to_v not in adjacency_list:
+                return False
+            if to_v not in adjacency_list[from_v]:
+                return False
+            adjacency_list[from_v].remove(to_v)
+            adjacency_list[to_v].remove(from_v)
+        traveled_all_edges = all([len(adjacent) == 0 for adjacent in adjacency_list.values()])
+        return traveled_all_edges
+
     @override
     def render(self, location: str):
         dot = graphviz.Graph()
