@@ -46,12 +46,15 @@ class Graph(DiGraph[T]):
 
         for i in range(1, len(nodes)):
             if nodes[i] in visited and i != len(nodes) - 1:
+                #print(f"visited {nodes[i]} twice")
                 return False
             visited.add(nodes[i])
             if not self.exists_edge(nodes[i-1], nodes[i]):
+                #print(f"path does not exist from {nodes[i-1]} to {nodes[i]}")
                 return False
             traveled_edge = nodes[i] in traveled_edges.get(nodes[i-1], [])
             if traveled_edge:
+                #print(f"traveled edge from {nodes[i-1]} to {nodes[i]} already")
                 return False
             traveled_edges.setdefault(nodes[i], []).append(nodes[i-1])
             traveled_edges.setdefault(nodes[i-1], []).append(nodes[i])
@@ -84,6 +87,10 @@ class Graph(DiGraph[T]):
             adjacency_list[to_v].remove(from_v)
         traveled_all_edges = all([len(adjacent) == 0 for adjacent in adjacency_list.values()])
         return traveled_all_edges
+    
+    def is_hamiltonean(self, *nodes: T)->bool:
+        contains_all_nodes = len(set(self._adjacency_list.keys()) - set([self._get_index_of(node) for node in nodes])) == 0
+        return self.is_path(*nodes) and contains_all_nodes and nodes[0] == nodes[-1]
 
     @override
     def render(self, location: str):

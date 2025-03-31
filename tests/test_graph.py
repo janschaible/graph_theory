@@ -96,3 +96,15 @@ class TestGraph(AbstractGraphTest):
         graph.delete_vertex("d")
         assert graph.is_euler_tour("a", "b", "c", "a")
         assert graph.is_euler_tour("a", "b", "c", "b", "c" "a") == False
+
+    def test_is_hamiltonian(self):
+
+        graph = Graph(
+            ("a", "b"),
+            ("b", "c"),
+            ("c", "a"),
+            ("c", "d"),
+            ("d", "a"),
+        )
+        assert graph.is_hamiltonean("a", "b", "c", "a") == False
+        assert graph.is_hamiltonean("a", "b", "c", "d", "a")
