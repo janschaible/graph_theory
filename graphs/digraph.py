@@ -1,15 +1,33 @@
-from typing import Generic, TypeVar, Optional
+from typing import Generic, TypeVar, Optional, TypeAlias, Union
 import pathlib
 import graphviz
 
 T = TypeVar("T")
 
+EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, int]]
+EdgeMapping: TypeAlias  = dict[int, dict[int, T]]
+
 class DiGraph(Generic[T]):
-    def __init__(self, *edges: tuple[T, T]) -> None:
+    def __init__(self, *edges: EdgeDefinition[T]) -> None:
+        """
+        one edge is specified by:
+            (from, to)
+            (from, to, weight)
+        """
         self._adjacency_list: dict[int, list[int]]  = {}
         self.labels: dict[int, T] = {}
-        for from_v, to_v in edges:
-            self.add_edge(from_v, to_v)
+        self.weights: EdgeMapping[int] = {}
+        self.weighted = None
+
+        for edge in edges:
+            if len(edge) == 2:
+                from_v, to_v = edge
+                weight = None
+                self.weighted = False
+            else:
+                from_v, to_v, weight = edge
+                self.weighted = True
+            self.add_edge(from_v, to_v, weight)
 
     def add_vertex(self, v: T)->int:
         assert self._get_index_of(v) is None, f"tired to add vertex {v} but was already present"
@@ -21,23 +39,36 @@ class DiGraph(Generic[T]):
     def delete_vertex(self, v: T):
         index = self._get_index_of(v)
         assert index is not None, f"Tried to delete vertex that was not there {v}"
+        for to_i in self._adjacency_list[index]:
+            self.delete_edge_properties(index, to_i)
+
         del self._adjacency_list[index]
-        for adjacent in self._adjacency_list.values():
+        for from_i, adjacent in self._adjacency_list.items():
             if index in adjacent:
+                self.delete_edge_properties(from_i, index)
                 adjacent.remove(index)
 
-    def add_edge(self, from_v: T, to_v: T)->None:
+    def add_edge(self, from_v: T, to_v: T, weight: Optional[int]=None)->None:
         from_index = self._get_or_create_vertex(from_v)
         to_index = self._get_or_create_vertex(to_v)
         assert to_index not in self._adjacency_list[from_index], f"edge from {from_v} to {to_v} is already present"
         self._adjacency_list[from_index].append(to_index)
+        
+        assert weight is not None if self.weighted else weight is None, f"cannot use weight of {weight} either all edges have weights or none of them"
+        if weight is not None:
+            self.weights.setdefault(from_index, {})[to_index] = weight
 
     def delete_edge(self, from_v: T, to_v: T):
         from_index = self.get_present_index_of(from_v)
         to_index = self.get_present_index_of(to_v)
         assert to_index in self._adjacency_list[from_index], f"tried to delete invalid edge {from_v} to {to_v}"
         self._adjacency_list[from_index].remove(to_index)
-    
+        self.delete_edge_properties(from_index, to_index)
+
+    def delete_edge_properties(self, from_i: int, to_i: int):
+        if from_i in self.weights and to_i in self.weights[from_i]:
+            del self.weights[from_i][to_i]
+
     def exists_edge(self, from_v: T, to_v: T)->bool:
         from_index = self._get_index_of(from_v)
         to_index = self._get_index_of(to_v)
@@ -65,6 +96,15 @@ class DiGraph(Generic[T]):
         assert index is not None, f"required index {vertex} to be present"
         return index
 
+    def get_weight(self, from_v: T, to_v: T) -> int:
+        from_i = self.get_present_index_of(from_v)
+        to_i = self.get_present_index_of(to_v)
+        return self._get_weight_from_index(from_i, to_i)
+    
+    def _get_weight_from_index(self, from_i: int, to_i: int) -> int:
+        assert from_i in self.weights
+        assert to_i in self.weights[from_i]
+        return self.weights[from_i][to_i]
 
     def _get_index_of(self, vertex: T)->Optional[int]:
         for k,v in self.labels.items():
@@ -79,7 +119,12 @@ class DiGraph(Generic[T]):
         
         for k, adjacent_list in self._adjacency_list.items():
             for adjacent in adjacent_list:
-                dot.edge(str(k), str(adjacent))
+                dot.edge(str(k), str(adjacent), self._get_edge_label(k, adjacent))
 
         pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
         dot.render(location, format="png")
+
+    def _get_edge_label(self, from_i: int, to_i: int) -> str:
+        if not self.weighted:
+            return ""
+        return str(self._get_weight_from_index(from_i, to_i))

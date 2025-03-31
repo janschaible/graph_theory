@@ -108,3 +108,17 @@ class TestGraph(AbstractGraphTest):
         )
         assert graph.is_hamiltonean("a", "b", "c", "a") == False
         assert graph.is_hamiltonean("a", "b", "c", "d", "a")
+
+    def test_weights(self):
+        graph = Graph(
+            ("a", "b", 1),
+            ("b", "c", 2),
+            ("c", "d", 3),
+        )
+        assert graph.get_weight("a", "b") == 1
+        assert graph.get_weight("b", "a") == 1
+        assert graph.get_weight("b", "c") == 2
+        assert graph.get_weight("c", "b") == 2
+        assert graph.get_weight("c", "d") == 3
+        assert graph.get_weight("d", "c") == 3
+        self.render(graph, "test_weights")

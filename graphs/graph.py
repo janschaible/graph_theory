@@ -1,5 +1,5 @@
 from typing import TypeVar, override, Optional
-from graphs.digraph import DiGraph
+from graphs.digraph import DiGraph, EdgeDefinition
 from copy import deepcopy
 import graphviz
 import pathlib
@@ -7,13 +7,13 @@ import pathlib
 T = TypeVar("T")
 
 class Graph(DiGraph[T]):
-    def __init__(self, *edges: tuple[T, T]) -> None:
+    def __init__(self, *edges: EdgeDefinition) -> None:
         super().__init__(*edges)
 
     @override
-    def add_edge(self, from_v: T, to_v: T)->None:
-        super().add_edge(from_v, to_v)
-        super().add_edge(to_v, from_v)
+    def add_edge(self, from_v: T, to_v: T, weight: Optional[int] = None)->None:
+        super().add_edge(from_v, to_v, weight)
+        super().add_edge(to_v, from_v, weight)
 
     @override
     def delete_edge(self, from_v: T, to_v: T):
@@ -99,7 +99,9 @@ class Graph(DiGraph[T]):
             dot.node(str(l))
         
         for edge_from, edge_to in self.get_edge_set():
-            dot.edge(str(edge_from), str(edge_to))
+            from_i = self.get_present_index_of(edge_from)
+            to_i = self.get_present_index_of(edge_to)
+            dot.edge(str(edge_from), str(edge_to), self._get_edge_label(from_i, to_i))
 
         pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
         dot.render(location, format="png")
