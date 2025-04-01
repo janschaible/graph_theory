@@ -100,6 +100,5 @@ class Graph(DiGraph[T]):
         for edge_from, edge_to in self.get_edge_set():
             from_i = self.get_present_index_of(edge_from)
             to_i = self.get_present_index_of(edge_to)
-            weight = self._get_optional_weight(from_i, to_i)
-            G.add_edge(str(edge_from), str(edge_to), weight=weight, label=weight)
+            G.add_edge(str(edge_from), str(edge_to), **self._get_edge_properties(from_i, to_i))
         return G

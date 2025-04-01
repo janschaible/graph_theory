@@ -105,12 +105,6 @@ class DiGraph(Generic[T]):
         assert from_i in self.weights
         assert to_i in self.weights[from_i]
         return self.weights[from_i][to_i]
-    
-    def _get_optional_weight(self, from_i: int, to_i: int) -> Optional[int]:
-        if not self.weighted:
-            return None
-        return self._get_weight_from_index(from_i, to_i)
-
 
     def _get_index_of(self, vertex: T)->Optional[int]:
         for k,v in self.labels.items():
@@ -127,9 +121,15 @@ class DiGraph(Generic[T]):
             for adjacent in adjacent_list:
                 from_v: T = self.labels[k]
                 to_v: T = self.labels[adjacent]
-                weight=self._get_optional_weight(k, adjacent)
-                G.add_edge(str(from_v), str(to_v), weight=weight, label=weight)
+                G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent))
         return G
+
+    def _get_edge_properties(self, from_i:int, to_i:int):
+        properties = {}
+        if self.weighted:
+            properties["weight"] = self._get_weight_from_index(from_i, to_i)
+            properties["label"] = self._get_weight_from_index(from_i, to_i)
+        return properties
 
     def render(self, location: str):
         G = self.to_network_x()
