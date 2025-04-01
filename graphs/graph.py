@@ -1,8 +1,7 @@
 from typing import TypeVar, override, Optional
 from graphs.digraph import DiGraph, EdgeDefinition
 from copy import deepcopy
-import graphviz
-import pathlib
+import networkx as nx
 
 T = TypeVar("T")
 
@@ -93,15 +92,14 @@ class Graph(DiGraph[T]):
         return self.is_path(*nodes) and contains_all_nodes and nodes[0] == nodes[-1]
 
     @override
-    def render(self, location: str):
-        dot = graphviz.Graph()
+    def to_network_x(self) -> nx.Graph:
+        G = nx.Graph()
         for l in self.labels.values():
-            dot.node(str(l))
+            G.add_node(str(l))
         
         for edge_from, edge_to in self.get_edge_set():
             from_i = self.get_present_index_of(edge_from)
             to_i = self.get_present_index_of(edge_to)
-            dot.edge(str(edge_from), str(edge_to), self._get_edge_label(from_i, to_i))
-
-        pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
-        dot.render(location, format="png")
+            weight = self._get_optional_weight(from_i, to_i)
+            G.add_edge(str(edge_from), str(edge_to), weight=weight, label=weight)
+        return G

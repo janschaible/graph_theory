@@ -1,6 +1,6 @@
 from typing import Generic, TypeVar, Optional, TypeAlias, Union
+import networkx as nx
 import pathlib
-import graphviz
 
 T = TypeVar("T")
 
@@ -105,6 +105,12 @@ class DiGraph(Generic[T]):
         assert from_i in self.weights
         assert to_i in self.weights[from_i]
         return self.weights[from_i][to_i]
+    
+    def _get_optional_weight(self, from_i: int, to_i: int) -> Optional[int]:
+        if not self.weighted:
+            return None
+        return self._get_weight_from_index(from_i, to_i)
+
 
     def _get_index_of(self, vertex: T)->Optional[int]:
         for k,v in self.labels.items():
@@ -112,19 +118,22 @@ class DiGraph(Generic[T]):
                 return k
         return None
     
-    def render(self, location: str):
-        dot = graphviz.Digraph()
-        for k, l in self.labels.items():
-            dot.node(str(k), str(l))
+    def to_network_x(self) -> nx.Graph:
+        G = nx.Graph()
+        for l in self.labels.values():
+            G.add_node(str(l))
         
         for k, adjacent_list in self._adjacency_list.items():
             for adjacent in adjacent_list:
-                dot.edge(str(k), str(adjacent), self._get_edge_label(k, adjacent))
+                from_v: T = self.labels[k]
+                to_v: T = self.labels[adjacent]
+                weight=self._get_optional_weight(k, adjacent)
+                G.add_edge(str(from_v), str(to_v), weight=weight, label=weight)
+        return G
 
+    def render(self, location: str):
+        G = self.to_network_x()
         pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
-        dot.render(location, format="png")
-
-    def _get_edge_label(self, from_i: int, to_i: int) -> str:
-        if not self.weighted:
-            return ""
-        return str(self._get_weight_from_index(from_i, to_i))
+        A = nx.nx_agraph.to_agraph(G)
+        A.layout(prog="dot")
+        A.draw(location)

@@ -27,7 +27,7 @@ class AbstractGraphTest(unittest.TestCase):
          return f"{message}: {pprint.pformat(graph.get_adjacency_list())}"
 
     def render[T](self, graph: DiGraph[T], graph_name: str):
-        graph.render(f"{self.render_dir}/{graph_name}")
+        graph.render(f"{self.render_dir}/{graph_name}.png")
 
     def assert_weight_not_present[T](self,graph: DiGraph[T], from_v: T, to_v: T):
          with self.assertRaises(AssertionError):
