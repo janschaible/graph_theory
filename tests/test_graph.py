@@ -1,18 +1,13 @@
 from typing import override
 from tests.graph_test import AbstractGraphTest
 from graphs.graph import Graph
+from graphs.graph_creators import get_cyclic_graph
 
 def get_simple_graph()-> Graph[str]:
     return Graph(
             ("a", "b"),
             ("a", "c")
         )
-
-def get_cyclic_graph(node_count: int) -> Graph[str]:
-    assert node_count <= 24, "currently this implementation uses the alphabet"
-    edges = [(chr(i), chr(i+1)) for i in range(ord("a"), ord("a") + node_count - 1)]
-    edges.append((edges[0][0], edges[-1][-1]))
-    return Graph(*edges)
 
 class TestGraph(AbstractGraphTest):
 

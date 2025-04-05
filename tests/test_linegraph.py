@@ -2,18 +2,7 @@ from typing import override
 from tests.graph_test import AbstractGraphTest
 from graphs.graph import Graph
 from graphs.linegraph import get_line_graph, LineGraphVertex
-
-
-def get_k_graph(node_count: int) -> Graph[str]:
-    assert node_count <= 24, "currently this implementation uses the alphabet"
-    vertices = [chr(i) for i in range(ord("a"), ord("a") + node_count)]
-
-    edges: list[tuple[str, str]] = []
-    for i in range(len(vertices)):
-        for j in range(i+1, len(vertices)):
-            edges.append((vertices[i], vertices[j]))
-
-    return Graph(*edges)
+from graphs.graph_creators import get_k_graph
 
 class TestLineGraph(AbstractGraphTest):
     @classmethod

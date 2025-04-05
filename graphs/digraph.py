@@ -47,6 +47,9 @@ class DiGraph(Generic[T]):
             if index in adjacent:
                 self.delete_edge_properties(from_i, index)
                 adjacent.remove(index)
+    
+    def get_vertices(self)->list[T]:
+        return list(self.get_adjacency_list().keys())
 
     def add_edge(self, from_v: T, to_v: T, weight: Optional[int]=None)->None:
         from_index = self._get_or_create_vertex(from_v)
@@ -73,12 +76,29 @@ class DiGraph(Generic[T]):
         from_index = self._get_index_of(from_v)
         to_index = self._get_index_of(to_v)
         return from_index is not None and to_index in self._adjacency_list[from_index]
+    
+    def get_edges_from(self, from_v: T)->list[T]:
+        from_index = self._get_index_of(from_v)
+        if not from_index in self._adjacency_list:
+            return []
+        return self._resolve_indices(self._adjacency_list[from_index])
+
+    def get_edges_to(self, to_v: T)->list[T]:
+        to_index = self._get_index_of(to_v)
+        from_indices = []
+        for i, adjacent in self._adjacency_list.items():
+            if to_index in adjacent:
+                from_indices.append(i)
+        return self._resolve_indices(from_indices)
 
     def get_adjacency_list(self)->dict[T, list[T]]:
         adjacency_list:dict[T, list[T]] = {}
         for k, v in self._adjacency_list.items():
-            adjacency_list[self.labels[k]] = [self.labels[adjacent] for adjacent in v]
+            adjacency_list[self.labels[k]] = self._resolve_indices(v)
         return adjacency_list
+
+    def _resolve_indices(self, indices: list[int])->list[T]:
+        return [self.labels[index] for index in indices]
 
     def _get_or_create_vertex(self, v: T)-> int:
         present_index = self._get_index_of(v)
