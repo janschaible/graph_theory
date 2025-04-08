@@ -59,7 +59,7 @@ class Hierholzer[T]:
             order.setdefault(from_v, {})[to_v] = i
         if self.render_path is None:
             return
-        G = nx.Graph()
+        G = nx.DiGraph()
         for cycle in self.cycles:
             cycle_color = random_color()
             for i in range(1, len(cycle) + 1):

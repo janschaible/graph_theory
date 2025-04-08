@@ -1,4 +1,5 @@
 from typing import Generic, TypeVar, Optional, TypeAlias, Union
+import numpy as np
 import networkx as nx
 import pathlib
 
@@ -143,6 +144,14 @@ class DiGraph(Generic[T]):
                 to_v: T = self.labels[adjacent]
                 G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent))
         return G
+
+    def get_adjacency_matrix(self) -> np.ndarray:
+        dimensions = max([*self._adjacency_list.keys(), *[k for adjacent in self._adjacency_list.values() for k in adjacent]])+1
+        matrix = np.zeros((dimensions, dimensions))
+        for i, adjacent in self._adjacency_list.items():
+            for j in adjacent:
+                matrix[i][j] = True
+        return matrix
 
     def _get_edge_properties(self, from_i:int, to_i:int):
         properties = {}
