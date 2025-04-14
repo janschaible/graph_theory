@@ -133,17 +133,10 @@ class DiGraph(Generic[T]):
                 return k
         return None
     
-    def to_network_x(self) -> nx.Graph:
-        G = nx.Graph()
-        for l in self.labels.values():
-            G.add_node(str(l))
-        
-        for k, adjacent_list in self._adjacency_list.items():
-            for adjacent in adjacent_list:
-                from_v: T = self.labels[k]
-                to_v: T = self.labels[adjacent]
-                G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent))
-        return G
+    def _get_eigenvalue_centralities(self):
+        adjacency_matrix = self.get_adjacency_matrix()
+        eig_val, eig_vec = np.linalg.eig(adjacency_matrix)
+        return eig_vec[np.argmax(eig_val)]
 
     def get_adjacency_matrix(self) -> np.ndarray:
         dimensions = max([*self._adjacency_list.keys(), *[k for adjacent in self._adjacency_list.values() for k in adjacent]])+1
@@ -159,9 +152,35 @@ class DiGraph(Generic[T]):
             properties["weight"] = self._get_weight_from_index(from_i, to_i)
             properties["label"] = self._get_weight_from_index(from_i, to_i)
         return properties
+    
+    def _get_centrality_color(self, centralities: list[float], v: T)->str:
+        centrality = centralities[self.get_present_index_of(v)]
+        blue_value = abs(int(100 * centrality/max(centralities)))
+        return f"#0000{blue_value:x}"
+    
+    def _add_network_x_nodes(self, G: nx.Graph, **kwargs):
+        eigen_centralities = []
+        if kwargs.get("eigen_centrality", False):
+            eigen_centralities = self._get_eigenvalue_centralities()
+        for l in self.labels.values():
+            color = None
+            if kwargs.get("eigen_centrality", False):
+                color = self._get_centrality_color(eigen_centralities, l)
+            G.add_node(str(l), style='filled',fillcolor=color)
 
-    def render(self, location: str):
-        G = self.to_network_x()
+    def to_network_x(self, **kwargs) -> nx.Graph:
+        G = nx.DiGraph()
+        self._add_network_x_nodes(G, **kwargs)
+
+        for k, adjacent_list in self._adjacency_list.items():
+            for adjacent in adjacent_list:
+                from_v: T = self.labels[k]
+                to_v: T = self.labels[adjacent]
+                G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent))
+        return G
+
+    def render(self, location: str, **kwargs):
+        G = self.to_network_x(**kwargs)
         pathlib.Path(location).parent.mkdir(parents=True, exist_ok=True) 
         A = nx.nx_agraph.to_agraph(G)
         A.layout(prog="dot")

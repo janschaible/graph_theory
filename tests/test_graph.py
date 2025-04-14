@@ -117,3 +117,22 @@ class TestGraph(AbstractGraphTest):
         assert graph.get_weight("c", "d") == 3
         assert graph.get_weight("d", "c") == 3
         self.render(graph, "test_weights")
+
+    def test_eigen_centrality(self):
+        graph = Graph(
+            (1,8),
+            (1,7),
+            (2,4),
+            (2,6),
+            (2,7),
+            (4,6),
+            (4,7),
+            (4,8),
+            (6,9),
+            (9,3),
+            (9,5),
+            (8,5),
+            (7,5),
+            (5,3),
+        )
+        self.render(graph, "test_eigen_centrality", eigen_centrality=True)

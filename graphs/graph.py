@@ -92,11 +92,9 @@ class Graph(DiGraph[T]):
         return self.is_path(*nodes) and contains_all_nodes and nodes[0] == nodes[-1]
 
     @override
-    def to_network_x(self) -> nx.Graph:
+    def to_network_x(self, **kwargs) -> nx.Graph:
         G = nx.Graph()
-        for l in self.labels.values():
-            G.add_node(str(l))
-        
+        self._add_network_x_nodes(G, **kwargs)
         for edge_from, edge_to in self.get_edge_set():
             from_i = self.get_present_index_of(edge_from)
             to_i = self.get_present_index_of(edge_to)
