@@ -134,5 +134,6 @@ class TestGraph(AbstractGraphTest):
             (8,5),
             (7,5),
             (5,3),
+            vertices=[1,2,3,4,5,6,7,8,9]
         )
         self.render(graph, "test_eigen_centrality", eigen_centrality=True)

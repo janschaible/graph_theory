@@ -6,8 +6,8 @@ import networkx as nx
 T = TypeVar("T")
 
 class Graph(DiGraph[T]):
-    def __init__(self, *edges: EdgeDefinition) -> None:
-        super().__init__(*edges)
+    def __init__(self, *edges: EdgeDefinition, **kwargs) -> None:
+        super().__init__(*edges, **kwargs)
 
     @override
     def add_edge(self, from_v: T, to_v: T, weight: Optional[int] = None)->None:

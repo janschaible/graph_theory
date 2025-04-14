@@ -9,7 +9,7 @@ EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, int]]
 EdgeMapping: TypeAlias  = dict[int, dict[int, T]]
 
 class DiGraph(Generic[T]):
-    def __init__(self, *edges: EdgeDefinition[T]) -> None:
+    def __init__(self, *edges: EdgeDefinition[T], **kwargs) -> None:
         """
         one edge is specified by:
             (from, to)
@@ -19,6 +19,9 @@ class DiGraph(Generic[T]):
         self.labels: dict[int, T] = {}
         self.weights: EdgeMapping[int] = {}
         self.weighted = None
+
+        for v in kwargs.get("vertices", []):
+            self.add_vertex(v)
 
         for edge in edges:
             if len(edge) == 2:
@@ -136,7 +139,7 @@ class DiGraph(Generic[T]):
     def _get_eigenvalue_centralities(self):
         adjacency_matrix = self.get_adjacency_matrix()
         eig_val, eig_vec = np.linalg.eig(adjacency_matrix)
-        return eig_vec[np.argmax(eig_val)]
+        return np.abs(eig_vec.transpose()[np.argmax(eig_val)])
 
     def get_adjacency_matrix(self) -> np.ndarray:
         dimensions = max([*self._adjacency_list.keys(), *[k for adjacent in self._adjacency_list.values() for k in adjacent]])+1
@@ -155,8 +158,8 @@ class DiGraph(Generic[T]):
     
     def _get_centrality_color(self, centralities: list[float], v: T)->str:
         centrality = centralities[self.get_present_index_of(v)]
-        blue_value = abs(int(100 * centrality/max(centralities)))
-        return f"#0000{blue_value:x}"
+        blue_value = int(abs(255 * (centrality-min(centralities))/(max(centralities)-min(centralities))))
+        return f"#0000ff{blue_value:x}"
     
     def _add_network_x_nodes(self, G: nx.Graph, **kwargs):
         eigen_centralities = []
