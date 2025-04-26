@@ -137,3 +137,27 @@ class TestGraph(AbstractGraphTest):
             vertices=[1,2,3,4,5,6,7,8,9]
         )
         self.render(graph, "test_eigen_centrality", eigen_centrality=True)
+
+    
+    def test_dijkstra(self):
+        g = Graph(
+            ("s", "a", 0),
+            ("a", "b", 17),
+            ("b", "c", 14),
+            ("c", "g", 20),
+            ("g", "f", 21),
+            ("f", "e", 12),
+            ("e", "s", 70),
+            ("s", "c", 10),
+            ("b", "g", 2),
+        )
+        assert g.shortest_paths("s") == {
+            "s": 0,
+            "a": 0,
+            "b": 17,
+            "c": 10,
+            "g": 19,
+            "f": 40,
+            "e": 52,
+        }
+    

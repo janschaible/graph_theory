@@ -2,6 +2,7 @@ from typing import Generic, TypeVar, Optional, TypeAlias, Union
 import numpy as np
 import networkx as nx
 import pathlib
+import sys
 
 T = TypeVar("T")
 
@@ -188,3 +189,19 @@ class DiGraph(Generic[T]):
         A = nx.nx_agraph.to_agraph(G)
         A.layout(prog="dot")
         A.draw(location)
+
+    def shortest_paths(self, from_v: T) -> dict[T, int]:
+        assert self.weighted, "graph must be weighted to calculate shortest paths"
+        distances = {v:sys.maxsize for v in self.labels.values()}
+        distances[from_v] = 0
+        unprocessed = list(self.labels.values())
+        while len(unprocessed) > 0:
+            u = min(unprocessed, key=lambda v:distances[v])
+            unprocessed.remove(u)
+            index = self.get_present_index_of(u)
+            targets = self._adjacency_list[index]
+            for target in targets:
+                target_label = self.labels[target]
+                edge_weight = self.get_weight(u, target_label)
+                distances[target_label] = min(distances[target_label], distances[u] + edge_weight)
+        return distances
