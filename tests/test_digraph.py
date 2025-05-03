@@ -49,9 +49,9 @@ class TestDigraph(AbstractGraphTest):
 
     def test_adjacency_matrix(self):
         graph = DiGraph(
-            ("a", "b", 1),
-            ("b", "c", 2),
-            ("c", "d", 3),
+            ("a", "b"),
+            ("b", "c"),
+            ("c", "d"),
         )
         assert np.array_equal(
             graph.get_adjacency_matrix(),
@@ -64,3 +64,44 @@ class TestDigraph(AbstractGraphTest):
                 ]
             ),
         )
+
+
+    def test_floyd_warshall(self):
+        graph = DiGraph(
+            (1, 2, 4),
+            (1, 3, 2),
+            (2, 4, 3),
+            (3, 2, -1),
+            (4, 5, 2),
+            (5, 4, 1)
+        )
+        assert np.array_equal(
+            graph.floyd_warshall(),
+            np.array([
+            [ 0 , 1  , 2 , 4 , 6 ],
+            [ float("inf") , 0  , float("inf") , 3 , 5 ],
+            [ float("inf") , -1 , 0 , 2 , 4 ],
+            [ float("inf") , float("inf")  , float("inf") , 0 , 2 ],
+            [ float("inf") , float("inf")  , float("inf") , 1 , 0 ],
+            ])
+        )
+
+    def test_floyd_warshall_negative_cycle(self):
+        graph = DiGraph(
+            (1,2 , 3),
+            (2,1 , 1.3),
+            (2, 3, -1),
+            (2,4 ,7 ),
+            (5,2 , -1),
+            (3,4 , -1),
+            (4,5 , 1.2),
+            (1, 5, 2),
+        )
+        self.render(graph, "test_floyd_warshall")
+        res = graph.floyd_warshall()
+        print(res)
+        assert np.array_equal(
+            res,
+            [4, 3, 2, 5, 4]
+        )
+        

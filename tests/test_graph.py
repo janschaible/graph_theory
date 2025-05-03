@@ -151,7 +151,7 @@ class TestGraph(AbstractGraphTest):
             ("s", "c", 10),
             ("b", "g", 2),
         )
-        assert g.shortest_paths("s") == {
+        assert g.dijkstra("s") == {
             "s": 0,
             "a": 0,
             "b": 17,

@@ -6,7 +6,7 @@ import sys
 
 T = TypeVar("T")
 
-EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, int]]
+EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, float]]
 EdgeMapping: TypeAlias  = dict[int, dict[int, T]]
 
 class DiGraph(Generic[T]):
@@ -18,7 +18,7 @@ class DiGraph(Generic[T]):
         """
         self._adjacency_list: dict[int, list[int]]  = {}
         self.labels: dict[int, T] = {}
-        self.weights: EdgeMapping[int] = {}
+        self.weights: EdgeMapping[float] = {}
         self.weighted = None
 
         for v in kwargs.get("vertices", []):
@@ -56,7 +56,7 @@ class DiGraph(Generic[T]):
     def get_vertices(self)->list[T]:
         return list(self.get_adjacency_list().keys())
 
-    def add_edge(self, from_v: T, to_v: T, weight: Optional[int]=None)->None:
+    def add_edge(self, from_v: T, to_v: T, weight: Optional[float]=None)->None:
         from_index = self._get_or_create_vertex(from_v)
         to_index = self._get_or_create_vertex(to_v)
         assert to_index not in self._adjacency_list[from_index], f"edge from {from_v} to {to_v} is already present"
@@ -121,12 +121,12 @@ class DiGraph(Generic[T]):
         assert index is not None, f"required index {vertex} to be present"
         return index
 
-    def get_weight(self, from_v: T, to_v: T) -> int:
+    def get_weight(self, from_v: T, to_v: T) -> float:
         from_i = self.get_present_index_of(from_v)
         to_i = self.get_present_index_of(to_v)
         return self._get_weight_from_index(from_i, to_i)
     
-    def _get_weight_from_index(self, from_i: int, to_i: int) -> int:
+    def _get_weight_from_index(self, from_i: int, to_i: int) -> float:
         assert from_i in self.weights
         assert to_i in self.weights[from_i]
         return self.weights[from_i][to_i]
@@ -142,13 +142,16 @@ class DiGraph(Generic[T]):
         eig_val, eig_vec = np.linalg.eig(adjacency_matrix)
         return np.abs(eig_vec.transpose()[np.argmax(eig_val)])
 
-    def get_adjacency_matrix(self) -> np.ndarray:
+    def get_adjacency_matrix(self, default:float=0) -> np.ndarray:
         dimensions = max([*self._adjacency_list.keys(), *[k for adjacent in self._adjacency_list.values() for k in adjacent]])+1
-        matrix = np.zeros((dimensions, dimensions))
+        matrix = [[0 if i==j else default for j in range(dimensions)] for i in range(dimensions)]
         for i, adjacent in self._adjacency_list.items():
             for j in adjacent:
-                matrix[i][j] = True
-        return matrix
+                if self.weighted:
+                    matrix[i][j] = self._get_weight_from_index(i,j)
+                else:
+                    matrix[i][j] = 1
+        return np.array(matrix)
 
     def _get_edge_properties(self, from_i:int, to_i:int):
         properties = {}
@@ -190,9 +193,9 @@ class DiGraph(Generic[T]):
         A.layout(prog="dot")
         A.draw(location)
 
-    def shortest_paths(self, from_v: T) -> dict[T, int]:
+    def dijkstra(self, from_v: T) -> dict[T, float]:
         assert self.weighted, "graph must be weighted to calculate shortest paths"
-        distances = {v:sys.maxsize for v in self.labels.values()}
+        distances = {v:float("inf") for v in self.labels.values()}
         distances[from_v] = 0
         unprocessed = list(self.labels.values())
         while len(unprocessed) > 0:
@@ -205,3 +208,39 @@ class DiGraph(Generic[T]):
                 edge_weight = self.get_weight(u, target_label)
                 distances[target_label] = min(distances[target_label], distances[u] + edge_weight)
         return distances
+
+    def floyd_warshall(self):
+        distances = self.get_adjacency_matrix(float("inf"))
+        predecessors = [
+            [-1 if i==j or weight==float("inf") else i for j, weight in enumerate(row)]
+            for i, row in enumerate(distances)
+        ]
+        for k in range(len(distances)):
+            for i in range(len(distances)):
+                if distances[i][k] + distances[k][i] < 0:
+                    return self._fw_construct_negative_cycle(predecessors, i, k)
+                for j in range(len(distances)):
+                    distance_via_k = distances[i][k] + distances[k][j]
+                    if distance_via_k < distances[i][j]:
+                        distances[i][j] = distance_via_k
+                        predecessors[i][j] = predecessors[k][j]
+        return distances
+
+    def _fw_construct_negative_cycle(self, predecessors: list[list[int]], start: int, end: int)->list[T]:
+        predecessor = predecessors[start][end]
+        cycle = [end, predecessor]
+        i = 0
+        while predecessor != start:
+            predecessor = predecessors[start][predecessor]
+            cycle.append(predecessor)
+            i+=1
+            if i > 5000:
+                raise Exception("not found cycle")
+        predecessor = start
+        while predecessor != end:
+            predecessor = predecessors[end][predecessor]
+            cycle.append(predecessor)
+            i+=1
+            if i > 5000:
+                raise Exception("not found cycle")
+        return [self.labels[v] for v in cycle]
