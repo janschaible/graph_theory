@@ -1,4 +1,5 @@
 import numpy as np
+import networkx as nx
 from tests.graph_test import AbstractGraphTest
 from graphs.digraph import DiGraph
 
@@ -75,8 +76,9 @@ class TestDigraph(AbstractGraphTest):
             (4, 5, 2),
             (5, 4, 1)
         )
+        res,_ = graph.floyd_warshall()
         assert np.array_equal(
-            graph.floyd_warshall(),
+            res,
             np.array([
             [ 0 , 1  , 2 , 4 , 6 ],
             [ float("inf") , 0  , float("inf") , 3 , 5 ],
@@ -98,10 +100,30 @@ class TestDigraph(AbstractGraphTest):
             (1, 5, 2),
         )
         self.render(graph, "test_floyd_warshall")
-        res = graph.floyd_warshall()
+        res,_ = graph.floyd_warshall()
         print(res)
         assert np.array_equal(
             res,
             [4, 3, 2, 5, 4]
         )
-        
+    
+    def test_betweeness(self):
+        graph = DiGraph(
+            ("A", "B", 1),
+            ("A", "E", 1),
+            ("B", "G", 1),
+            ("E", "G", 1),
+            ("A", "H", 1),
+            ("G", "C", 1),
+            ("G", "F", 1),
+            ("G", "K", 1),
+            ("F", "D", 1),
+            ("C", "D", 1),
+            ("K", "L", 1),
+            ("L", "D", 1),
+            ("H", "I", 1),
+            ("I", "J", 1),
+            ("J", "D", 1),
+        )
+        self.render(graph, "test_betweeness")
+        graph.betweeness_centrality()

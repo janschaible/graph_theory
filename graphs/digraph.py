@@ -7,7 +7,6 @@ import sys
 T = TypeVar("T")
 
 EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, float]]
-EdgeMapping: TypeAlias  = dict[int, dict[int, T]]
 
 class DiGraph(Generic[T]):
     def __init__(self, *edges: EdgeDefinition[T], **kwargs) -> None:
@@ -18,7 +17,7 @@ class DiGraph(Generic[T]):
         """
         self._adjacency_list: dict[int, list[int]]  = {}
         self.labels: dict[int, T] = {}
-        self.weights: EdgeMapping[float] = {}
+        self.weights: dict[int, dict[int, float]] = {}
         self.weighted = None
 
         for v in kwargs.get("vertices", []):
@@ -218,17 +217,17 @@ class DiGraph(Generic[T]):
         for k in range(len(distances)):
             for i in range(len(distances)):
                 if distances[i][k] + distances[k][i] < 0:
-                    return self._fw_construct_negative_cycle(predecessors, i, k)
+                    return self._fw_construct_negative_cycle(predecessors, i, k), np.array(predecessors)
                 for j in range(len(distances)):
                     distance_via_k = distances[i][k] + distances[k][j]
                     if distance_via_k < distances[i][j]:
                         distances[i][j] = distance_via_k
                         predecessors[i][j] = predecessors[k][j]
-        return distances
+        return np.array(distances), np.array(predecessors)
 
-    def _fw_construct_negative_cycle(self, predecessors: list[list[int]], start: int, end: int)->list[T]:
+    def _fw_construct_negative_cycle(self, predecessors: list[list[int]], start: int, end: int)->np.ndarray:
         predecessor = predecessors[start][end]
-        cycle = [end, predecessor]
+        cycle:list[int] = [end, predecessor]
         i = 0
         while predecessor != start:
             predecessor = predecessors[start][predecessor]
@@ -243,4 +242,36 @@ class DiGraph(Generic[T]):
             i+=1
             if i > 5000:
                 raise Exception("not found cycle")
-        return [self.labels[v] for v in cycle]
+        return np.array([self.labels[v] for v in cycle])
+
+    def excentricity(self, v: T)->float:
+        distances = self.dijkstra(v)
+        return max(distances.values())
+
+    def center(self):
+        center = None
+        center_excentricity = float("inf")
+        for v in self.labels.values():
+            excentricity = self.excentricity(v)
+            if excentricity<center_excentricity:
+                center = v
+                center_excentricity = excentricity
+        return center
+
+    def diameter(self)-> float:
+        max_diameter = 0
+        for v in self.labels.values():
+            max_diameter = max(max_diameter, self.excentricity(v))
+        return max_diameter
+
+    def closeness_centrality(self, v: T):
+        distances,_ = self.floyd_warshall()
+        sum_distances: float = 0
+        for d in distances.T[self.get_present_index_of(v)]:
+            if d != float("inf"):
+                sum_distances+=d
+        return 1/sum_distances
+
+    def betweeness_centrality(self, v: T):
+        pass
+
