@@ -1,8 +1,8 @@
 from typing import Generic, TypeVar, Optional, TypeAlias, Union
+from itertools import product
 import numpy as np
 import networkx as nx
 import pathlib
-import sys
 
 T = TypeVar("T")
 
@@ -214,16 +214,27 @@ class DiGraph(Generic[T]):
             [-1 if i==j or weight==float("inf") else i for j, weight in enumerate(row)]
             for i, row in enumerate(distances)
         ]
+        #                               s  , t   , count
+        count_paths_between: dict[tuple[int, int], int] = {(a, b): 0 for (a, b) in product(range(len(distances)), repeat=2)}
+        #                                        s  , t          v  , count
+        count_paths_between_using_v: dict[tuple[int, int], dict[int, int]] = {(a, b): {} for (a, b) in product(range(len(distances)), repeat=2)}
+
         for k in range(len(distances)):
             for i in range(len(distances)):
                 if distances[i][k] + distances[k][i] < 0:
-                    return self._fw_construct_negative_cycle(predecessors, i, k), np.array(predecessors)
+                    return self._fw_construct_negative_cycle(predecessors, i, k), None, None, None
                 for j in range(len(distances)):
                     distance_via_k = distances[i][k] + distances[k][j]
+                    if distance_via_k == distances[i][j]:
+                        # path with equal weight
+                        count_paths_between[(i,j)] += 1
+                        count_paths_between_using_v[(i,j)][k] = count_paths_between_using_v[(i,j)].get(k, 0) + 1
                     if distance_via_k < distances[i][j]:
+                        count_paths_between[(i,j)] = 1
+                        count_paths_between_using_v[(i,j)] = {k: 1}
                         distances[i][j] = distance_via_k
                         predecessors[i][j] = predecessors[k][j]
-        return np.array(distances), np.array(predecessors)
+        return np.array(distances), np.array(predecessors), count_paths_between, count_paths_between_using_v
 
     def _fw_construct_negative_cycle(self, predecessors: list[list[int]], start: int, end: int)->np.ndarray:
         predecessor = predecessors[start][end]
@@ -265,13 +276,21 @@ class DiGraph(Generic[T]):
         return max_diameter
 
     def closeness_centrality(self, v: T):
-        distances,_ = self.floyd_warshall()
+        distances,_,_,_ = self.floyd_warshall()
         sum_distances: float = 0
         for d in distances.T[self.get_present_index_of(v)]:
             if d != float("inf"):
                 sum_distances+=d
         return 1/sum_distances
 
-    def betweeness_centrality(self, v: T):
-        pass
+    def betweeness_centrality(self) -> dict[T, float]:
+        _,_,count_paths_between, count_paths_between_using_v = self.floyd_warshall()
+        if None in (count_paths_between, count_paths_between_using_v):
+            raise ValueError("cant compute centrality for graph with negative cycles")
+        denominator = sum(count_paths_between.values()) # type: ignore
+        numerators: dict[int, float] = {}
+        for s_t_by_v in count_paths_between_using_v.values(): # type: ignore
+            for v, count in s_t_by_v.items():
+                numerators[v] = numerators.get(v, 0) + count
+        return {self.labels[v]: numerator/denominator for v, numerator in numerators.items()}
 

@@ -76,7 +76,7 @@ class TestDigraph(AbstractGraphTest):
             (4, 5, 2),
             (5, 4, 1)
         )
-        res,_ = graph.floyd_warshall()
+        res,_,_,_ = graph.floyd_warshall()
         assert np.array_equal(
             res,
             np.array([
@@ -100,7 +100,7 @@ class TestDigraph(AbstractGraphTest):
             (1, 5, 2),
         )
         self.render(graph, "test_floyd_warshall")
-        res,_ = graph.floyd_warshall()
+        res,_,_,_ = graph.floyd_warshall()
         print(res)
         assert np.array_equal(
             res,
@@ -108,6 +108,7 @@ class TestDigraph(AbstractGraphTest):
         )
     
     def test_betweeness(self):
+        # todo js this shit is broken...
         graph = DiGraph(
             ("A", "B", 1),
             ("A", "E", 1),
@@ -126,4 +127,5 @@ class TestDigraph(AbstractGraphTest):
             ("J", "D", 1),
         )
         self.render(graph, "test_betweeness")
-        graph.betweeness_centrality()
+        print(nx.betweenness_centrality(graph.to_network_x()))
+        print(graph.betweeness_centrality())
