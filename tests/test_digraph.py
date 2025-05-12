@@ -1,5 +1,6 @@
 import numpy as np
 import networkx as nx
+from graphs.tree import Tree
 from tests.graph_test import AbstractGraphTest
 from graphs.digraph import DiGraph
 
@@ -129,3 +130,49 @@ class TestDigraph(AbstractGraphTest):
         self.render(graph, "test_betweeness")
         print(nx.betweenness_centrality(graph.to_network_x()))
         print(graph.betweeness_centrality())
+
+    def test_bfs(self):
+        graph = DiGraph(
+            (1,2),
+            (1,5),
+            (2,1),
+            (2,4),
+            (2,5),
+            (4,2),
+            (4,6),
+            (6,2),
+            (6,5),
+            (5,3),
+            (5,7),
+            (3,7),
+            (7,5)
+        )
+        tree,girth = graph.bfs(1)
+        assert tree == Tree(
+            1,
+            [
+                Tree(2, [Tree(4, [Tree(6,[], "1246")], "124")], "12"),
+                Tree(5, [Tree(3,[], "153"), Tree(7,[], "157")], "15")
+            ],
+            "1"
+        )
+        assert girth == 2
+
+    def test_girth(self):
+        graph = DiGraph(
+            (1,2),
+            (1,5),
+            (2,4),
+            (2,5),
+            (4,6),
+            (6,2),
+            (6,5),
+            (5,3),
+            (3,7),
+            (7,5)
+        )
+        _,girth = graph.bfs(1)
+        self.render(graph, "test_girth")
+
+        print(girth)
+        assert girth == 3

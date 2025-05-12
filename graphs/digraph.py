@@ -1,8 +1,12 @@
+import os
+import sys
 from typing import Generic, TypeVar, Optional, TypeAlias, Union
 from itertools import product
 import numpy as np
 import networkx as nx
 import pathlib
+
+from graphs.tree import Tree
 
 T = TypeVar("T")
 
@@ -53,6 +57,7 @@ class DiGraph(Generic[T]):
                 adjacent.remove(index)
     
     def get_vertices(self)->list[T]:
+        # todo js this disregards any sinks fix this
         return list(self.get_adjacency_list().keys())
 
     def add_edge(self, from_v: T, to_v: T, weight: Optional[float]=None)->None:
@@ -135,6 +140,13 @@ class DiGraph(Generic[T]):
             if v == vertex:
                 return k
         return None
+
+    def get_indices(self) -> set[int]:
+        indices = set(self._adjacency_list.keys())
+        for adjacent in self._adjacency_list.values():
+            for v in adjacent:
+                indices.add(v)
+        return indices
     
     def _get_eigenvalue_centralities(self):
         adjacency_matrix = self.get_adjacency_matrix()
@@ -294,3 +306,46 @@ class DiGraph(Generic[T]):
                 numerators[v] = numerators.get(v, 0) + count
         return {self.labels[v]: numerator/denominator for v, numerator in numerators.items()}
 
+
+    def bfs(self, starting_point: T)-> tuple[Tree, int]:
+        '''
+        returns:
+        tree -- minimal spanning tree
+        int -- girth of graph
+        '''
+        girth = sys.maxsize
+        root = Tree[T](starting_point,[], str(starting_point))
+        visited: dict[int, Tree] = {self.get_present_index_of(starting_point): root}
+        queue: list[Tree[T]] = [root]
+        while len(queue):
+            tree = queue.pop(0)
+            v = self.get_present_index_of(tree.node)
+            for u in self.__connects_to(v, list(visited.keys())):
+                len_cycle = self.__find_len_between(tree, visited[u]) + 1
+                if len_cycle < girth:
+                    print(root)
+                    girth = len_cycle
+            neighbours = self._adjacency_list[v]
+            child_trees = {
+                n: Tree[T](self.labels[n],[], f"{tree.lineage}{str(self.labels[n])}")
+                for n in neighbours if n not in visited
+            }
+            tree.children = list(child_trees.values())
+            queue += child_trees.values()
+            visited |= child_trees
+        return root, girth
+
+
+    def __connects_to(self, v: int, possible: list[int])-> list[int]:
+        connects = []
+        for u in self._adjacency_list[v]:
+            if u in possible:
+                connects.append(u)
+        return connects
+    
+    def __find_len_between(self, t1: Tree, t2: Tree)->int:
+        # abcdefg
+        # abchi
+        common_prefix = os.path.commonprefix([t1.lineage, t2.lineage])
+        assert len(common_prefix) >= 1
+        return len(t1.lineage) + len(t2.lineage) - 2*len(common_prefix)
