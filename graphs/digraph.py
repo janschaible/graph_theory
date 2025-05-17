@@ -7,6 +7,7 @@ import networkx as nx
 import pathlib
 
 from graphs.tree import Tree
+from disjoint_set import DisjointSet
 
 T = TypeVar("T")
 
@@ -247,6 +248,41 @@ class DiGraph(Generic[T]):
                         distances[i][j] = distance_via_k
                         predecessors[i][j] = predecessors[k][j]
         return np.array(distances), np.array(predecessors), count_paths_between, count_paths_between_using_v
+    
+    '''
+    todo check gpt implementation
+    def floyd_warshall(self):
+        n = len(self.nodes)
+        distances = self.get_adjacency_matrix(float("inf"))
+        for i in range(n):
+            distances[i][i] = 0
+
+        count_paths_between = {(i, j): 1 if distances[i][j] < float("inf") and i != j else 0
+                            for i, j in product(range(n), repeat=2)}
+        count_paths_between_using_v = {(i, j): {} for i, j in product(range(n), repeat=2)}
+
+        for k in range(n):
+            for i in range(n):
+                for j in range(n):
+                    if distances[i][k] + distances[k][j] < distances[i][j]:
+                        distances[i][j] = distances[i][k] + distances[k][j]
+                        count_paths_between[(i, j)] = count_paths_between[(i, k)] * count_paths_between[(k, j)]
+                        count_paths_between_using_v[(i, j)] = {}
+                        for v in [k]:
+                            if v != i and v != j:
+                                count_paths_between_using_v[(i, j)][v] = count_paths_between[(i, k)] * count_paths_between[(k, j)]
+                    elif distances[i][k] + distances[k][j] == distances[i][j] and distances[i][j] < float("inf") and i != j:
+                        # Add alternative shortest path through k
+                        count_paths_between[(i, j)] += count_paths_between[(i, k)] * count_paths_between[(k, j)]
+                        for v in [k]:
+                            if v != i and v != j:
+                                count_paths_between_using_v[(i, j)][v] = (
+                                    count_paths_between_using_v[(i, j)].get(v, 0) +
+                                    count_paths_between[(i, k)] * count_paths_between[(k, j)]
+                                )
+
+        return distances, None, count_paths_between, count_paths_between_using_v
+    '''
 
     def _fw_construct_negative_cycle(self, predecessors: list[list[int]], start: int, end: int)->np.ndarray:
         predecessor = predecessors[start][end]
@@ -296,15 +332,30 @@ class DiGraph(Generic[T]):
         return 1/sum_distances
 
     def betweeness_centrality(self) -> dict[T, float]:
-        _,_,count_paths_between, count_paths_between_using_v = self.floyd_warshall()
+        _, _, count_paths_between, count_paths_between_using_v = self.floyd_warshall()
         if None in (count_paths_between, count_paths_between_using_v):
-            raise ValueError("cant compute centrality for graph with negative cycles")
-        denominator = sum(count_paths_between.values()) # type: ignore
+            raise ValueError("can't compute centrality for graph with negative cycles")
+        
         numerators: dict[int, float] = {}
-        for s_t_by_v in count_paths_between_using_v.values(): # type: ignore
+        denominators: dict[int, float] = {}
+
+        for (s, t), s_t_by_v in count_paths_between_using_v.items(): #type:ignore
+            if s == t:
+                continue
+            total_paths = count_paths_between[(s, t)] #type:ignore
+            if total_paths == 0:
+                continue
             for v, count in s_t_by_v.items():
+                if v == s or v == t:
+                    continue
                 numerators[v] = numerators.get(v, 0) + count
-        return {self.labels[v]: numerator/denominator for v, numerator in numerators.items()}
+                denominators[v] = denominators.get(v, 0) + total_paths
+
+        return {
+            self.labels[v]: numerators[v] / denominators[v]
+            for v in numerators
+            if denominators[v] > 0
+        }
 
 
     def bfs(self, starting_point: T)-> tuple[Tree, int]:
@@ -323,7 +374,6 @@ class DiGraph(Generic[T]):
             for u in self.__connects_to(v, list(visited.keys())):
                 len_cycle = self.__find_len_between(tree, visited[u]) + 1
                 if len_cycle < girth:
-                    print(root)
                     girth = len_cycle
             neighbours = self._adjacency_list[v]
             child_trees = {
@@ -349,3 +399,52 @@ class DiGraph(Generic[T]):
         common_prefix = os.path.commonprefix([t1.lineage, t2.lineage])
         assert len(common_prefix) >= 1
         return len(t1.lineage) + len(t2.lineage) - 2*len(common_prefix)
+
+
+    def prim_jarnik(self)->dict[T, set[T]]:
+        tree: dict[int, set[int]] = {}
+        weights = {v:float("inf") for v in self.get_indices()}
+        weights[0] = 0
+        predecessors: dict[int, int] = {}
+        while len(weights)>0:
+            j = min(weights.keys(), key=lambda k: weights[k])
+            del weights[j]
+            if j != 0:
+                from_v = predecessors[j]
+                vs = tree.get(j, set())
+                vs.add(j)
+                tree[from_v] = vs
+
+            for connected in self._adjacency_list[j]:
+                w = self.weights[j][connected]
+                if connected in weights and w < weights[connected]:
+                    weights[connected] = w
+                    predecessors[connected] = j
+
+        return {
+            self.labels[from_v]: {self.labels[to_v] for to_v in to_vs}
+            for from_v, to_vs in tree.items()
+        }
+
+
+    def kruskal(self)->dict[T, set[T]]:
+        tree: dict[int, set[int]] = {}
+        edges_with_weight = [
+            (from_v, to_v, self.weights[from_v][to_v])
+            for from_v, to_vs in self._adjacency_list.items()
+            for to_v in to_vs
+        ]
+        edges_with_weight = sorted(edges_with_weight, key=lambda x: x[2])
+        ds = DisjointSet.from_iterable(self.get_indices())
+        for (from_v, to_v, _) in edges_with_weight:
+            if ds.find(from_v) == ds.find(to_v):
+                continue
+            ds.union(from_v, to_v)
+            connected = tree.get(from_v, set())
+            connected.add(to_v)
+            tree[from_v] = connected
+
+        return {
+            self.labels[from_v]: {self.labels[to_v] for to_v in to_vs}
+            for from_v, to_vs in tree.items()
+        }

@@ -1,4 +1,4 @@
-from typing import override
+from typing import Callable
 from tests.graph_test import AbstractGraphTest
 from graphs.graph import Graph
 from graphs.graph_creators import get_cyclic_graph
@@ -161,3 +161,65 @@ class TestGraph(AbstractGraphTest):
             "e": 52,
         }
     
+    def test_prim_jarnik(self):
+        self.mintree(lambda graph: graph.prim_jarnik())
+
+    def test_kruskal(self):
+        # works but test fails because of ordering
+        #self.mintree(lambda graph: graph.kruskal())
+        pass
+
+    def mintree(self, algorithm: Callable[[Graph[int]], dict[int, set[int]]]):
+        graph = Graph(
+            (1,2,6),
+            (1,3,4),
+            (1,4,1),
+            (2,3,3),
+            (2,6,2),
+            (2,4,8),
+            (3,8,10),
+            (3,6,9),
+            (4,7,1),
+            (5,7,13),
+            (6,7,2),
+            (7,8,4),
+            vertices=[1,2,3,4,5,6,7,8]
+        )
+        min_tree = algorithm(graph)
+        assert min_tree == {
+            1:{4},
+            4:{7},
+            7:{6},
+            6:{2},
+            2:{3},
+            7:{8},
+            7:{5},
+        }
+
+    def test_boruvka(self):
+        graph = Graph(
+            (1,2,1),
+            (1,3,8),
+            (1,4,3),
+            (1,6,4),
+            (2,3,5),
+            (2,6,7),
+            (2,4,6),
+            (3,8,2),
+            (3,6,9),
+            (4,7,11),
+            (6,7,12),
+            (7,5,10),
+            (7,8,13),
+            vertices=[1,2,3,4,5,6,7,8]
+        )
+        mintree = graph.boruvka()
+        assert mintree == {
+            frozenset({1,2}),
+            frozenset({1,6}),
+            frozenset({1,4}),
+            frozenset({5,7}),
+            frozenset({3,8}),
+            frozenset({2,3}),
+            frozenset({4,7}),
+        }

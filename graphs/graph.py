@@ -1,6 +1,7 @@
 from typing import TypeVar, override, Optional
 from graphs.digraph import DiGraph, EdgeDefinition
 from copy import deepcopy
+from disjoint_set import DisjointSet
 import networkx as nx
 
 T = TypeVar("T")
@@ -100,3 +101,27 @@ class Graph(DiGraph[T]):
             to_i = self.get_present_index_of(edge_to)
             G.add_edge(str(edge_from), str(edge_to), **self._get_edge_properties(from_i, to_i))
         return G
+
+    def boruvka(self)->set[frozenset[T]]:
+        ds = DisjointSet.from_iterable(self.get_indices())
+        tree: set[frozenset[int]] = set()
+        n = len(self.get_indices())
+        while len(tree) < n-1:
+            joins:list[tuple[int,int]] = []
+            for sub in ds.itersets():
+                possible: list[tuple[int, int, float]] = []
+                for v in sub:
+                    possible += [(v, u, self.weights[v][u]) for u in self._adjacency_list[v] if u not in sub] # type: ignore
+                if len(possible) == 0:
+                    continue
+                min_edge = min(possible, key=lambda x: x[2])
+                joins.append((min_edge[0], min_edge[1]))
+                tree.add(frozenset({min_edge[0], min_edge[1]}))
+            for join in joins:
+                ds.union(join[0], join[1])
+        return {
+            frozenset({self.labels[v] for v in edges})
+            for edges in tree
+        }
+
+
