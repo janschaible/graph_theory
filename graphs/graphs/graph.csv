@@ -1,0 +1,146 @@
+,line,from,to,weight
+0,U1,Olympia-Einkaufszentrum,Georg-Brauchle-Ring,60
+1,U1,Georg-Brauchle-Ring,Westfriedhof,60
+2,U1,Westfriedhof,Gern,60
+3,U1,Gern,Rotkreuzplatz,70
+4,U1,Rotkreuzplatz,Mailingerstraße,80
+5,U1,Mailingerstraße,Stiglmaierplatz,60
+6,U1,Stiglmaierplatz,Hauptbahnhof,70
+7,U1,Hauptbahnhof,Sendlinger Tor,70
+8,U1,Sendlinger Tor,Fraunhoferstraße,60
+9,U1,Fraunhoferstraße,Kolumbusplatz,80
+10,U1,Kolumbusplatz,Candidplatz,70
+11,U1,Candidplatz,Wettersteinplatz,60
+12,U1,Wettersteinplatz,St.-Quirin-Platz,50
+13,U1,St.-Quirin-Platz,Mangfallplatz,70
+14,U2,Feldmoching,Hasenbergl,70
+15,U2,Hasenbergl,Dülferstraße,50
+16,U2,Dülferstraße,Harthof,80
+17,U2,Harthof,Am Hart,70
+18,U2,Am Hart,Frankfurter Ring,70
+19,U2,Frankfurter Ring,Milbertshofen,60
+20,U2,Milbertshofen,Scheidplatz,80
+21,U2,Scheidplatz,Hohenzollernplatz,80
+22,U2,Hohenzollernplatz,Josephsplatz,60
+23,U2,Josephsplatz,Theresienstraße,50
+24,U2,Theresienstraße,Königsplatz,60
+25,U2,Königsplatz,Hauptbahnhof,50
+26,U2,Hauptbahnhof,Sendlinger Tor,70
+27,U2,Sendlinger Tor,Fraunhoferstraße,60
+28,U2,Fraunhoferstraße,Kolumbusplatz,80
+29,U2,Kolumbusplatz,Silberhornstraße,60
+30,U2,Silberhornstraße,Untersbergstraße,50
+31,U2,Untersbergstraße,Giesing Bahnhof,50
+32,U2,Giesing Bahnhof,Karl-Preis-Platz,90
+33,U2,Karl-Preis-Platz,Innsbrucker Ring,70
+34,U2,Innsbrucker Ring,Josephsburg,100
+35,U2,Josephsburg,Kreillerstraße,70
+36,U2,Kreillerstraße,Trudering,80
+37,U2,Trudering,Moosfeld,70
+38,U2,Moosfeld,Messestadt West,100
+39,U2,Messestadt West,Messestadt Ost,70
+40,U3,Moosach,Moosacher St.-Martins-Platz,60
+41,U3,Moosacher St.-Martins-Platz,Olympia-Einkaufszentrum,70
+42,U3,Olympia-Einkaufszentrum,Oberwiesenfeld,90
+43,U3,Oberwiesenfeld,Olympiazentrum,80
+44,U3,Olympiazentrum,Petuelring,70
+45,U3,Petuelring,Scheidplatz,60
+46,U3,Scheidplatz,Bonnerplatz,60
+47,U3,Bonnerplatz,Münchner Freiheit,70
+48,U3,Münchner Freiheit,Giselastraße,50
+49,U3,Giselastraße,Universität,60
+50,U3,Universität,Odeonsplatz,60
+51,U3,Odeonsplatz,Marienplatz,50
+52,U3,Marienplatz,Sendlinger Tor,70
+53,U3,Sendlinger Tor,Goetheplatz,70
+54,U3,Goetheplatz,Poccistraße,60
+55,U3,Poccistraße,Implerstraße,60
+56,U3,Implerstraße,Brudermühlstraße,70
+57,U3,Brudermühlstraße,Thalkirchen (Tierpark),80
+58,U3,Thalkirchen (Tierpark),Obersendling,80
+59,U3,Obersendling,Aidenbachstraße,60
+60,U3,Aidenbachstraße,Machtlfinger Straße,60
+61,U3,Machtlfinger Straße,Forstenrieder Allee,80
+62,U3,Forstenrieder Allee,Basler Straße,60
+63,U3,Basler Straße,Fürstenried West,70
+64,U4,Theresienwiese,Hauptbahnhof,60
+65,U4,Hauptbahnhof,Karlsplatz (Stachus),60
+66,U4,Karlsplatz (Stachus),Odeonsplatz,60
+67,U4,Odeonsplatz,Lehel,70
+68,U4,Lehel,Max-Weber-Platz,70
+69,U4,Max-Weber-Platz,Prinzregentenplatz,60
+70,U4,Prinzregentenplatz,Böhmerwaldplatz,60
+71,U4,Böhmerwaldplatz,Richard-Strauss-Straße,60
+72,U4,Richard-Strauss-Straße,Arabellapark,100
+73,U5,Laimer Platz,Friedenheimer Straße,60
+74,U5,Friedenheimer Straße,Westendstraße,60
+75,U5,Westendstraße,Heimeranplatz,60
+76,U5,Heimeranplatz,Schwanthalerhöhe,60
+77,U5,Schwanthalerhöhe,Theresienwiese,60
+78,U5,Theresienwiese,Hauptbahnhof,60
+79,U5,Hauptbahnhof,Karlsplatz (Stachus),60
+80,U5,Karlsplatz (Stachus),Odeonsplatz,60
+81,U5,Odeonsplatz,Lehel,70
+82,U5,Lehel,Max-Weber-Platz,70
+83,U5,Max-Weber-Platz,Ostbahnhof,80
+84,U5,Ostbahnhof,Innsbrucker Ring,110
+85,U5,Innsbrucker Ring,Michaelibad,70
+86,U5,Michaelibad,Quiddestraße,100
+87,U5,Quiddestraße,Neuperlach Zentrum,60
+88,U5,Neuperlach Zentrum,Therese-Giehse-Allee,60
+89,U5,Therese-Giehse-Allee,Neuperlach Süd,70
+90,U6,"Garch.,Forschungsz.",Garching,140
+91,U6,Garching,Garching-Hochbrück,120
+92,U6,Garching-Hochbrück,Fröttmaning,240
+93,U6,Fröttmaning,Kieferngarten,80
+94,U6,Kieferngarten,Freimann,100
+95,U6,Freimann,Studentenstadt,80
+96,U6,Studentenstadt,Alte Heide,60
+97,U6,Alte Heide,Nordfriedhof,60
+98,U6,Nordfriedhof,Dietlindenstraße,60
+99,U6,Dietlindenstraße,Münchner Freiheit,60
+100,U6,Münchner Freiheit,Giselastraße,50
+101,U6,Giselastraße,Universität,60
+102,U6,Universität,Odeonsplatz,60
+103,U6,Odeonsplatz,Marienplatz,50
+104,U6,Marienplatz,Sendlinger Tor,70
+105,U6,Sendlinger Tor,Goetheplatz,70
+106,U6,Goetheplatz,Poccistraße,60
+107,U6,Poccistraße,Implerstraße,60
+108,U6,Implerstraße,Harras,90
+109,U6,Harras,Partnachplatz,60
+110,U6,Partnachplatz,Westpark,60
+111,U6,Westpark,Holzapfelkreuth,80
+112,U6,Holzapfelkreuth,Haderner Stern,80
+113,U6,Haderner Stern,Großhadern,80
+114,U6,Großhadern,Klinikum Großhadern,60
+115,U7,Rotkreuzplatz,Mailingerstraße,60
+116,U7,Mailingerstraße,Stiglmaierplatz,60
+117,U7,Stiglmaierplatz,Hauptbahnhof,60
+118,U7,Hauptbahnhof,Sendlinger Tor,60
+119,U7,Sendlinger Tor,Fraunhoferstraße,60
+120,U7,Fraunhoferstraße,Kolumbusplatz,120
+121,U7,Kolumbusplatz,Silberhornstraße,60
+122,U7,Silberhornstraße,Untersbergstraße,60
+123,U7,Untersbergstraße,Giesing Bahnhof,60
+124,U7,Giesing Bahnhof,Karl-Preis-Platz,60
+125,U7,Karl-Preis-Platz,Innsbrucker Ring,60
+126,U7,Innsbrucker Ring,Michaelibad,120
+127,U7,Michaelibad,Quiddestraße,120
+128,U7,Quiddestraße,Neuperlach Zentrum,60
+129,U8,Scheidplatz,Hohenzollernplatz,60
+130,U8,Hohenzollernplatz,Josephsplatz,60
+131,U8,Josephsplatz,Theresienstraße,60
+132,U8,Theresienstraße,Königsplatz,60
+133,U8,Königsplatz,Hauptbahnhof,60
+134,U8,Hauptbahnhof,Sendlinger Tor,60
+135,U8,Sendlinger Tor,Fraunhoferstraße,60
+136,U8,Fraunhoferstraße,Kolumbusplatz,120
+137,U8,Kolumbusplatz,Silberhornstraße,60
+138,U8,Silberhornstraße,Untersbergstraße,60
+139,U8,Untersbergstraße,Giesing Bahnhof,60
+140,U8,Giesing Bahnhof,Karl-Preis-Platz,60
+141,U8,Karl-Preis-Platz,Innsbrucker Ring,60
+142,U8,Innsbrucker Ring,Michaelibad,120
+143,U8,Michaelibad,Quiddestraße,120
+144,U8,Quiddestraße,Neuperlach Zentrum,60
