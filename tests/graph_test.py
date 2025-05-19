@@ -1,5 +1,7 @@
 from graphs.digraph import DiGraph
 from pathlib import Path
+from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 import shutil
 import unittest
 import pprint
@@ -28,6 +30,11 @@ class AbstractGraphTest(unittest.TestCase):
 
     def render[T](self, graph: DiGraph[T], graph_name: str, **kwargs):
         graph.render(f"{self.render_dir}/{graph_name}.png", **kwargs)
+
+    def save_fig(self, fig: Figure, name: str):
+        output_path = Path(self.render_dir)
+        output_path.mkdir(parents=True, exist_ok=True)
+        fig.savefig(output_path / f"{name}.png", dpi=1000)
 
     def assert_weight_not_present[T](self,graph: DiGraph[T], from_v: T, to_v: T):
          with self.assertRaises(AssertionError):

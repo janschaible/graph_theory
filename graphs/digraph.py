@@ -179,12 +179,18 @@ class DiGraph(Generic[T]):
     
     def _add_network_x_nodes(self, G: nx.Graph, **kwargs):
         eigen_centralities = []
+        closeness_centralities = []
         if kwargs.get("eigen_centrality", False):
             eigen_centralities = self._get_eigenvalue_centralities()
+        if kwargs.get("closeness_centrality", False):
+            closeness_centralities = self.closeness_centrality()
+
         for l in self.labels.values():
             color = None
             if kwargs.get("eigen_centrality", False):
                 color = self._get_centrality_color(eigen_centralities, l)
+            if kwargs.get("closeness_centrality", False):
+                color =  self._get_centrality_color(closeness_centralities, l)
             G.add_node(str(l), style='filled',fillcolor=color)
 
     def to_network_x(self, **kwargs) -> nx.Graph:
@@ -323,13 +329,16 @@ class DiGraph(Generic[T]):
             max_diameter = max(max_diameter, self.excentricity(v))
         return max_diameter
 
-    def closeness_centrality(self, v: T):
+    def closeness_centrality(self)->list[float]:
         distances,_,_,_ = self.floyd_warshall()
-        sum_distances: float = 0
-        for d in distances.T[self.get_present_index_of(v)]:
-            if d != float("inf"):
-                sum_distances+=d
-        return 1/sum_distances
+        centralities = np.zeros(len(self.labels))
+        for i, v in self.labels.items():
+            sum_distances: float = 0
+            for d in distances.T[self.get_present_index_of(v)]:
+                if d != float("inf"):
+                    sum_distances+=d
+            centralities[i] = 1/sum_distances
+        return centralities.tolist()
 
     def betweeness_centrality(self) -> dict[T, float]:
         _, _, count_paths_between, count_paths_between_using_v = self.floyd_warshall()
