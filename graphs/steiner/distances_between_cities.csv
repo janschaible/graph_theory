@@ -1,0 +1,577 @@
+,from,to,distance
+0,Augsburg,Augsburg,0.0
+1,Augsburg,Ingolstadt,58.5104263913807
+2,Augsburg,Regensburg,113.94233538795292
+3,Augsburg,Landshut,94.30827683328553
+4,Augsburg,Straubing,135.4593199431243
+5,Augsburg,Passau,190.31931279878438
+6,Augsburg,Deggendorf,160.31363455714254
+7,Augsburg,Burghausen,145.12256710235408
+8,Augsburg,"Weißenburg, Bayern",73.7598630442708
+9,Augsburg,Freising,62.574581742324426
+10,Augsburg,Moosburg a.d. Isar,77.17522613846543
+11,Augsburg,Vilsbiburg,107.96740590090715
+12,Augsburg,Landau a.d. Isar,136.246652064505
+13,Augsburg,Mainburg,71.79370515039179
+14,Augsburg,Abensberg,87.3971434937623
+15,Augsburg,Schierling,105.00403298373622
+16,Augsburg,Schrobenhausen,34.51708272637836
+17,Augsburg,Erding,74.9561886551215
+18,Augsburg,Pfarrkirchen,150.8099632136439
+19,Augsburg,Osterhofen,160.57315498574192
+20,Augsburg,Eichstätt,61.971720983274864
+21,Augsburg,Neuburg a.d. Donau,45.884573834458024
+22,Augsburg,Kösching,66.16298912974618
+23,Augsburg,Pfaffenhofen a.d. Ilm,48.44300791984974
+24,Ingolstadt,Augsburg,58.5104263913807
+25,Ingolstadt,Ingolstadt,0.0
+26,Ingolstadt,Regensburg,56.83732252665012
+27,Ingolstadt,Landshut,59.03605159966337
+28,Ingolstadt,Straubing,84.83860144269292
+29,Ingolstadt,Passau,150.95980463815283
+30,Ingolstadt,Deggendorf,112.84862688123133
+31,Ingolstadt,Burghausen,123.65095782442773
+32,Ingolstadt,"Weißenburg, Bayern",44.524214463339526
+33,Ingolstadt,Freising,46.608106395178204
+34,Ingolstadt,Moosburg a.d. Isar,49.81621403399317
+35,Ingolstadt,Vilsbiburg,76.85338087387348
+36,Ingolstadt,Landau a.d. Isar,93.46658765813679
+37,Ingolstadt,Mainburg,29.526601623820202
+38,Ingolstadt,Abensberg,32.59408420449844
+39,Ingolstadt,Schierling,52.86730041764677
+40,Ingolstadt,Schrobenhausen,25.30367006704345
+41,Ingolstadt,Erding,61.96886391931657
+42,Ingolstadt,Pfarrkirchen,117.23073591764572
+43,Ingolstadt,Osterhofen,117.18189457204838
+44,Ingolstadt,Eichstätt,22.838544488217025
+45,Ingolstadt,Neuburg a.d. Donau,18.227498356251015
+46,Ingolstadt,Kösching,7.67139504655617
+47,Ingolstadt,Pfaffenhofen a.d. Ilm,26.66104468182539
+48,Regensburg,Augsburg,113.94233538795292
+49,Regensburg,Ingolstadt,56.83732252665012
+50,Regensburg,Regensburg,0.0
+51,Regensburg,Landshut,53.888690865817594
+52,Regensburg,Straubing,37.72319629630398
+53,Regensburg,Passau,111.44078057911211
+54,Regensburg,Deggendorf,66.46902475022975
+55,Regensburg,Burghausen,109.93009249837966
+56,Regensburg,"Weißenburg, Bayern",82.07936183032123
+57,Regensburg,Freising,73.5246217665742
+58,Regensburg,Moosburg a.d. Isar,62.64003801215571
+59,Regensburg,Vilsbiburg,66.26357778663309
+60,Regensburg,Landau a.d. Isar,58.29727815126527
+61,Regensburg,Mainburg,48.04740823652282
+62,Regensburg,Abensberg,27.15857235932136
+63,Regensburg,Schierling,20.459903392390686
+64,Regensburg,Schrobenhausen,79.44082783913159
+65,Regensburg,Erding,80.50814029444359
+66,Regensburg,Pfarrkirchen,89.85624854216019
+67,Regensburg,Osterhofen,76.17459380708334
+68,Regensburg,Eichstätt,68.16450505235173
+69,Regensburg,Neuburg a.d. Donau,74.10681165298442
+70,Regensburg,Kösching,49.415323033965315
+71,Regensburg,Pfaffenhofen a.d. Ilm,69.49673192626273
+72,Landshut,Augsburg,94.30827683328553
+73,Landshut,Ingolstadt,59.03605159966337
+74,Landshut,Regensburg,53.888690865817594
+75,Landshut,Landshut,0.0
+76,Landshut,Straubing,49.18482529292164
+77,Landshut,Passau,96.4593062323419
+78,Landshut,Deggendorf,68.05043822036565
+79,Landshut,Burghausen,65.53987702794508
+80,Landshut,"Weißenburg, Bayern",102.43424826132888
+81,Landshut,Freising,33.61717146975783
+82,Landshut,Moosburg a.d. Isar,17.84862354183109
+83,Landshut,Vilsbiburg,17.929690746141816
+84,Landshut,Landau a.d. Isar,42.370255818156956
+85,Landshut,Mainburg,29.557219670112968
+86,Landshut,Abensberg,39.477377074534644
+87,Landshut,Schierling,33.512187816141804
+88,Landshut,Schrobenhausen,65.29223737383671
+89,Landshut,Erding,31.256681364222572
+90,Landshut,Pfarrkirchen,59.14751211799419
+91,Landshut,Osterhofen,66.44640785700523
+92,Landshut,Eichstätt,81.35128459365534
+93,Landshut,Neuburg a.d. Donau,74.84654511160558
+94,Landshut,Kösching,56.74427794360504
+95,Landshut,Pfaffenhofen a.d. Ilm,47.362640110371984
+96,Straubing,Augsburg,135.4593199431243
+97,Straubing,Ingolstadt,84.83860144269292
+98,Straubing,Regensburg,37.72319629630398
+99,Straubing,Landshut,49.18482529292164
+100,Straubing,Straubing,0.0
+101,Straubing,Passau,73.75535500266172
+102,Straubing,Deggendorf,29.207454170210656
+103,Straubing,Burghausen,82.71075848745834
+104,Straubing,"Weißenburg, Bayern",117.82581905853607
+105,Straubing,Freising,80.8912419466787
+106,Straubing,Moosburg a.d. Isar,65.69565072384376
+107,Straubing,Vilsbiburg,50.69827521546946
+108,Straubing,Landau a.d. Isar,25.200056951556277
+109,Straubing,Mainburg,63.66806443658948
+110,Straubing,Abensberg,52.416430701987395
+111,Straubing,Schierling,31.971629336249137
+112,Straubing,Schrobenhausen,102.1029176141855
+113,Straubing,Erding,80.41238225306708
+114,Straubing,Pfarrkirchen,56.89828819074645
+115,Straubing,Osterhofen,38.59273884202778
+116,Straubing,Eichstätt,101.33043831274863
+117,Straubing,Neuburg a.d. Donau,103.06567739087377
+118,Straubing,Kösching,78.64568808277873
+119,Straubing,Pfaffenhofen a.d. Ilm,87.17007135502301
+120,Passau,Augsburg,190.31931279878438
+121,Passau,Ingolstadt,150.95980463815283
+122,Passau,Regensburg,111.44078057911211
+123,Passau,Landshut,96.4593062323419
+124,Passau,Straubing,73.75535500266172
+125,Passau,Passau,0.0
+126,Passau,Deggendorf,46.54961390705814
+127,Passau,Burghausen,65.51118589851689
+128,Passau,"Weißenburg, Bayern",189.20025636921855
+129,Passau,Freising,128.0079055021289
+130,Passau,Moosburg a.d. Isar,113.15151096158928
+131,Passau,Vilsbiburg,82.6133357251776
+132,Passau,Landau a.d. Isar,57.558601694193555
+133,Passau,Mainburg,123.65247830991157
+134,Passau,Abensberg,121.1529338352289
+135,Passau,Schierling,101.37928528676476
+136,Passau,Schrobenhausen,161.55031894668602
+137,Passau,Erding,118.40231186155835
+138,Passau,Pfarrkirchen,41.63055086114829
+139,Passau,Osterhofen,35.34232451451586
+140,Passau,Eichstätt,170.70625191162054
+141,Passau,Neuburg a.d. Donau,168.54240369818572
+142,Passau,Kösching,146.276690765709
+143,Passau,Pfaffenhofen a.d. Ilm,143.7940286786034
+144,Deggendorf,Augsburg,160.31363455714254
+145,Deggendorf,Ingolstadt,112.84862688123133
+146,Deggendorf,Regensburg,66.46902475022975
+147,Deggendorf,Landshut,68.05043822036565
+148,Deggendorf,Straubing,29.207454170210656
+149,Deggendorf,Passau,46.54961390705814
+150,Deggendorf,Deggendorf,0.0
+151,Deggendorf,Burghausen,75.60068249866241
+152,Deggendorf,"Weißenburg, Bayern",147.02097397434687
+153,Deggendorf,Freising,101.63881100619851
+154,Deggendorf,Moosburg a.d. Isar,85.86847624846939
+155,Deggendorf,Vilsbiburg,61.770923837376465
+156,Deggendorf,Landau a.d. Isar,26.912721370132687
+157,Deggendorf,Mainburg,89.147810184286
+158,Deggendorf,Abensberg,80.87691973970828
+159,Deggendorf,Schierling,60.318332945142565
+160,Deggendorf,Schrobenhausen,128.13600443557868
+161,Deggendorf,Erding,97.21711128392656
+162,Deggendorf,Pfarrkirchen,44.65799980084077
+163,Deggendorf,Osterhofen,15.217652990896898
+164,Deggendorf,Eichstätt,130.24054034974964
+165,Deggendorf,Neuburg a.d. Donau,131.0294732006835
+166,Deggendorf,Kösching,107.03689397073474
+167,Deggendorf,Pfaffenhofen a.d. Ilm,111.92685859199567
+168,Burghausen,Augsburg,145.12256710235408
+169,Burghausen,Ingolstadt,123.65095782442773
+170,Burghausen,Regensburg,109.93009249837966
+171,Burghausen,Landshut,65.53987702794508
+172,Burghausen,Straubing,82.71075848745834
+173,Burghausen,Passau,65.51118589851689
+174,Burghausen,Deggendorf,75.60068249866241
+175,Burghausen,Burghausen,0.0
+176,Burghausen,"Weißenburg, Bayern",167.7045458796352
+177,Burghausen,Freising,84.95620553076193
+178,Burghausen,Moosburg a.d. Isar,74.81860175769926
+179,Burghausen,Vilsbiburg,47.77672274561071
+180,Burghausen,Landau a.d. Isar,57.78653900601276
+181,Burghausen,Mainburg,94.27527231202194
+182,Burghausen,Abensberg,103.89117227427397
+183,Burghausen,Schierling,91.19158888653187
+184,Burghausen,Schrobenhausen,124.15464732772081
+185,Burghausen,Erding,70.4705184994055
+186,Burghausen,Pfarrkirchen,31.36496433021253
+187,Burghausen,Osterhofen,61.949146847977055
+188,Burghausen,Eichstätt,146.3417548315353
+189,Burghausen,Neuburg a.d. Donau,137.86110355735778
+190,Burghausen,Kösching,122.07381394774579
+191,Burghausen,Pfaffenhofen a.d. Ilm,106.21250213689076
+192,"Weißenburg, Bayern",Augsburg,73.7598630442708
+193,"Weißenburg, Bayern",Ingolstadt,44.524214463339526
+194,"Weißenburg, Bayern",Regensburg,82.07936183032123
+195,"Weißenburg, Bayern",Landshut,102.43424826132888
+196,"Weißenburg, Bayern",Straubing,117.82581905853607
+197,"Weißenburg, Bayern",Passau,189.20025636921855
+198,"Weißenburg, Bayern",Deggendorf,147.02097397434687
+199,"Weißenburg, Bayern",Burghausen,167.7045458796352
+200,"Weißenburg, Bayern","Weißenburg, Bayern",0.0
+201,"Weißenburg, Bayern",Freising,90.06491384530196
+202,"Weißenburg, Bayern",Moosburg a.d. Isar,94.33764006134587
+203,"Weißenburg, Bayern",Vilsbiburg,120.36393878022228
+204,"Weißenburg, Bayern",Landau a.d. Isar,132.03437662428126
+205,"Weißenburg, Bayern",Mainburg,73.46121182666155
+206,"Weißenburg, Bayern",Abensberg,68.28362640894879
+207,"Weißenburg, Bayern",Schierling,87.84062717422394
+208,"Weißenburg, Bayern",Schrobenhausen,56.43330173750797
+209,"Weißenburg, Bayern",Erding,105.85424416526004
+210,"Weißenburg, Bayern",Pfarrkirchen,158.85347191176288
+211,"Weißenburg, Bayern",Osterhofen,154.20734454994755
+212,"Weißenburg, Bayern",Eichstätt,21.734770282735106
+213,"Weißenburg, Bayern",Neuburg a.d. Donau,35.98201266607438
+214,"Weißenburg, Bayern",Kösching,45.69010683584409
+215,"Weißenburg, Bayern",Pfaffenhofen a.d. Ilm,68.17653038859628
+216,Freising,Augsburg,62.574581742324426
+217,Freising,Ingolstadt,46.608106395178204
+218,Freising,Regensburg,73.5246217665742
+219,Freising,Landshut,33.61717146975783
+220,Freising,Straubing,80.8912419466787
+221,Freising,Passau,128.0079055021289
+222,Freising,Deggendorf,101.63881100619851
+223,Freising,Burghausen,84.95620553076193
+224,Freising,"Weißenburg, Bayern",90.06491384530196
+225,Freising,Freising,0.0
+226,Freising,Moosburg a.d. Isar,15.772933619407068
+227,Freising,Vilsbiburg,45.457002094739906
+228,Freising,Landau a.d. Isar,75.89468006054021
+229,Freising,Mainburg,26.807657208900018
+230,Freising,Abensberg,48.79594751168771
+231,Freising,Schierling,56.533135142261926
+232,Freising,Schrobenhausen,39.52843736594771
+233,Freising,Erding,16.01449260407106
+234,Freising,Pfarrkirchen,88.23565616338502
+235,Freising,Osterhofen,99.72230178456932
+236,Freising,Eichstätt,68.49888577195487
+237,Freising,Neuburg a.d. Donau,55.88999651128895
+238,Freising,Kösching,48.99164049731937
+239,Freising,Pfaffenhofen a.d. Ilm,22.509074050750467
+240,Moosburg a.d. Isar,Augsburg,77.17522613846543
+241,Moosburg a.d. Isar,Ingolstadt,49.81621403399317
+242,Moosburg a.d. Isar,Regensburg,62.64003801215571
+243,Moosburg a.d. Isar,Landshut,17.84862354183109
+244,Moosburg a.d. Isar,Straubing,65.69565072384376
+245,Moosburg a.d. Isar,Passau,113.15151096158928
+246,Moosburg a.d. Isar,Deggendorf,85.86847624846939
+247,Moosburg a.d. Isar,Burghausen,74.81860175769926
+248,Moosburg a.d. Isar,"Weißenburg, Bayern",94.33764006134587
+249,Moosburg a.d. Isar,Freising,15.772933619407068
+250,Moosburg a.d. Isar,Moosburg a.d. Isar,0.0
+251,Moosburg a.d. Isar,Vilsbiburg,31.221209519358784
+252,Moosburg a.d. Isar,Landau a.d. Isar,60.174262006106865
+253,Moosburg a.d. Isar,Mainburg,22.310500939799887
+254,Moosburg a.d. Isar,Abensberg,41.140314513913516
+255,Moosburg a.d. Isar,Schierling,43.88237916999854
+256,Moosburg a.d. Isar,Schrobenhausen,50.306493219355815
+257,Moosburg a.d. Isar,Erding,17.919964733880466
+258,Moosburg a.d. Isar,Pfarrkirchen,74.24600991486847
+259,Moosburg a.d. Isar,Osterhofen,84.11569857892432
+260,Moosburg a.d. Isar,Eichstätt,72.64752683943642
+261,Moosburg a.d. Isar,Neuburg a.d. Donau,63.06092156780275
+262,Moosburg a.d. Isar,Kösching,49.768754325370736
+263,Moosburg a.d. Isar,Pfaffenhofen a.d. Ilm,32.07437942784154
+264,Vilsbiburg,Augsburg,107.96740590090715
+265,Vilsbiburg,Ingolstadt,76.85338087387348
+266,Vilsbiburg,Regensburg,66.26357778663309
+267,Vilsbiburg,Landshut,17.929690746141816
+268,Vilsbiburg,Straubing,50.69827521546946
+269,Vilsbiburg,Passau,82.6133357251776
+270,Vilsbiburg,Deggendorf,61.770923837376465
+271,Vilsbiburg,Burghausen,47.77672274561071
+272,Vilsbiburg,"Weißenburg, Bayern",120.36393878022228
+273,Vilsbiburg,Freising,45.457002094739906
+274,Vilsbiburg,Moosburg a.d. Isar,31.221209519358784
+275,Vilsbiburg,Vilsbiburg,0.0
+276,Vilsbiburg,Landau a.d. Isar,34.86988489544853
+277,Vilsbiburg,Mainburg,47.32941256860503
+278,Vilsbiburg,Abensberg,56.33029556205999
+279,Vilsbiburg,Schierling,46.11912509837777
+280,Vilsbiburg,Schrobenhausen,81.30252053262078
+281,Vilsbiburg,Erding,36.6735666419152
+282,Vilsbiburg,Pfarrkirchen,43.03239712678897
+283,Vilsbiburg,Osterhofen,56.42092691009255
+284,Vilsbiburg,Eichstätt,99.25651460873311
+285,Vilsbiburg,Neuburg a.d. Donau,92.27210203457567
+286,Vilsbiburg,Kösching,74.67395731016009
+287,Vilsbiburg,Pfaffenhofen a.d. Ilm,63.09142120870583
+288,Landau a.d. Isar,Augsburg,136.246652064505
+289,Landau a.d. Isar,Ingolstadt,93.46658765813679
+290,Landau a.d. Isar,Regensburg,58.29727815126527
+291,Landau a.d. Isar,Landshut,42.370255818156956
+292,Landau a.d. Isar,Straubing,25.200056951556277
+293,Landau a.d. Isar,Passau,57.558601694193555
+294,Landau a.d. Isar,Deggendorf,26.912721370132687
+295,Landau a.d. Isar,Burghausen,57.78653900601276
+296,Landau a.d. Isar,"Weißenburg, Bayern",132.03437662428126
+297,Landau a.d. Isar,Freising,75.89468006054021
+298,Landau a.d. Isar,Moosburg a.d. Isar,60.174262006106865
+299,Landau a.d. Isar,Vilsbiburg,34.86988489544853
+300,Landau a.d. Isar,Landau a.d. Isar,0.0
+301,Landau a.d. Isar,Mainburg,66.86034573584688
+302,Landau a.d. Isar,Abensberg,63.79173493878453
+303,Landau a.d. Isar,Schierling,44.63224750937148
+304,Landau a.d. Isar,Schrobenhausen,105.50323310112162
+305,Landau a.d. Isar,Erding,70.48766238801201
+306,Landau a.d. Isar,Pfarrkirchen,32.118462932477534
+307,Landau a.d. Isar,Osterhofen,24.406511009132814
+308,Landau a.d. Isar,Eichstätt,113.19783110061248
+309,Landau a.d. Isar,Neuburg a.d. Donau,111.18345402201022
+310,Landau a.d. Isar,Kösching,88.71863527853041
+311,Landau a.d. Isar,Pfaffenhofen a.d. Ilm,88.35863420175255
+312,Mainburg,Augsburg,71.79370515039179
+313,Mainburg,Ingolstadt,29.526601623820202
+314,Mainburg,Regensburg,48.04740823652282
+315,Mainburg,Landshut,29.557219670112968
+316,Mainburg,Straubing,63.66806443658948
+317,Mainburg,Passau,123.65247830991157
+318,Mainburg,Deggendorf,89.147810184286
+319,Mainburg,Burghausen,94.27527231202194
+320,Mainburg,"Weißenburg, Bayern",73.46121182666155
+321,Mainburg,Freising,26.807657208900018
+322,Mainburg,Moosburg a.d. Isar,22.310500939799887
+323,Mainburg,Vilsbiburg,47.32941256860503
+324,Mainburg,Landau a.d. Isar,66.86034573584688
+325,Mainburg,Mainburg,0.0
+326,Mainburg,Abensberg,22.11686776344241
+327,Mainburg,Schierling,34.063179560776796
+328,Mainburg,Schrobenhausen,38.99736160309917
+329,Mainburg,Erding,38.291273605814716
+330,Mainburg,Pfarrkirchen,88.25427559618122
+331,Mainburg,Osterhofen,91.16734112685356
+332,Mainburg,Eichstätt,52.075683119202
+333,Mainburg,Neuburg a.d. Donau,45.51538488633381
+334,Mainburg,Kösching,28.029882482193624
+335,Mainburg,Pfaffenhofen a.d. Ilm,23.601825708955907
+336,Abensberg,Augsburg,87.3971434937623
+337,Abensberg,Ingolstadt,32.59408420449844
+338,Abensberg,Regensburg,27.15857235932136
+339,Abensberg,Landshut,39.477377074534644
+340,Abensberg,Straubing,52.416430701987395
+341,Abensberg,Passau,121.1529338352289
+342,Abensberg,Deggendorf,80.87691973970828
+343,Abensberg,Burghausen,103.89117227427397
+344,Abensberg,"Weißenburg, Bayern",68.28362640894879
+345,Abensberg,Freising,48.79594751168771
+346,Abensberg,Moosburg a.d. Isar,41.140314513913516
+347,Abensberg,Vilsbiburg,56.33029556205999
+348,Abensberg,Landau a.d. Isar,63.79173493878453
+349,Abensberg,Mainburg,22.11686776344241
+350,Abensberg,Abensberg,0.0
+351,Abensberg,Schierling,20.562697126159744
+352,Abensberg,Schrobenhausen,52.910067922998735
+353,Abensberg,Erding,58.69522961297015
+354,Abensberg,Pfarrkirchen,91.14305178865507
+355,Abensberg,Osterhofen,86.48125404351282
+356,Abensberg,Eichstätt,49.69478580786777
+357,Abensberg,Neuburg a.d. Donau,50.776130994054235
+358,Abensberg,Kösching,26.231460666103285
+359,Abensberg,Pfaffenhofen a.d. Ilm,42.35942836649533
+360,Schierling,Augsburg,105.00403298373622
+361,Schierling,Ingolstadt,52.86730041764677
+362,Schierling,Regensburg,20.459903392390686
+363,Schierling,Landshut,33.512187816141804
+364,Schierling,Straubing,31.971629336249137
+365,Schierling,Passau,101.37928528676476
+366,Schierling,Deggendorf,60.318332945142565
+367,Schierling,Burghausen,91.19158888653187
+368,Schierling,"Weißenburg, Bayern",87.84062717422394
+369,Schierling,Freising,56.533135142261926
+370,Schierling,Moosburg a.d. Isar,43.88237916999854
+371,Schierling,Vilsbiburg,46.11912509837777
+372,Schierling,Landau a.d. Isar,44.63224750937148
+373,Schierling,Mainburg,34.063179560776796
+374,Schierling,Abensberg,20.562697126159744
+375,Schierling,Schierling,0.0
+376,Schierling,Schrobenhausen,71.01261023538386
+377,Schierling,Erding,61.429557654524636
+378,Schierling,Pfarrkirchen,74.12184324657281
+379,Schierling,Osterhofen,66.38542550122584
+380,Schierling,Eichstätt,70.06207380958058
+381,Schierling,Neuburg a.d. Donau,71.09460550254
+382,Schierling,Kösching,46.76774222874236
+383,Schierling,Pfaffenhofen a.d. Ilm,57.50347532630495
+384,Schrobenhausen,Augsburg,34.51708272637836
+385,Schrobenhausen,Ingolstadt,25.30367006704345
+386,Schrobenhausen,Regensburg,79.44082783913159
+387,Schrobenhausen,Landshut,65.29223737383671
+388,Schrobenhausen,Straubing,102.1029176141855
+389,Schrobenhausen,Passau,161.55031894668602
+390,Schrobenhausen,Deggendorf,128.13600443557868
+391,Schrobenhausen,Burghausen,124.15464732772081
+392,Schrobenhausen,"Weißenburg, Bayern",56.43330173750797
+393,Schrobenhausen,Freising,39.52843736594771
+394,Schrobenhausen,Moosburg a.d. Isar,50.306493219355815
+395,Schrobenhausen,Vilsbiburg,81.30252053262078
+396,Schrobenhausen,Landau a.d. Isar,105.50323310112162
+397,Schrobenhausen,Mainburg,38.99736160309917
+398,Schrobenhausen,Abensberg,52.910067922998735
+399,Schrobenhausen,Schierling,71.01261023538386
+400,Schrobenhausen,Schrobenhausen,0.0
+401,Schrobenhausen,Erding,55.209930097127206
+402,Schrobenhausen,Pfarrkirchen,124.12081415271561
+403,Schrobenhausen,Osterhofen,129.89137637519576
+404,Schrobenhausen,Eichstätt,37.39830563911603
+405,Schrobenhausen,Neuburg a.d. Donau,20.54764095817017
+406,Schrobenhausen,Kösching,32.6749116558822
+407,Schrobenhausen,Pfaffenhofen a.d. Ilm,18.23477647519579
+408,Erding,Augsburg,74.9561886551215
+409,Erding,Ingolstadt,61.96886391931657
+410,Erding,Regensburg,80.50814029444359
+411,Erding,Landshut,31.256681364222572
+412,Erding,Straubing,80.41238225306708
+413,Erding,Passau,118.40231186155835
+414,Erding,Deggendorf,97.21711128392656
+415,Erding,Burghausen,70.4705184994055
+416,Erding,"Weißenburg, Bayern",105.85424416526004
+417,Erding,Freising,16.01449260407106
+418,Erding,Moosburg a.d. Isar,17.919964733880466
+419,Erding,Vilsbiburg,36.6735666419152
+420,Erding,Landau a.d. Isar,70.48766238801201
+421,Erding,Mainburg,38.291273605814716
+422,Erding,Abensberg,58.69522961297015
+423,Erding,Schierling,61.429557654524636
+424,Erding,Schrobenhausen,55.209930097127206
+425,Erding,Erding,0.0
+426,Erding,Pfarrkirchen,77.42664153191859
+427,Erding,Osterhofen,93.01395770836642
+428,Erding,Eichstätt,84.20965189518034
+429,Erding,Neuburg a.d. Donau,71.9011187589721
+430,Erding,Kösching,63.60130006138132
+431,Erding,Pfaffenhofen a.d. Ilm,38.521287923910286
+432,Pfarrkirchen,Augsburg,150.8099632136439
+433,Pfarrkirchen,Ingolstadt,117.23073591764572
+434,Pfarrkirchen,Regensburg,89.85624854216019
+435,Pfarrkirchen,Landshut,59.14751211799419
+436,Pfarrkirchen,Straubing,56.89828819074645
+437,Pfarrkirchen,Passau,41.63055086114829
+438,Pfarrkirchen,Deggendorf,44.65799980084077
+439,Pfarrkirchen,Burghausen,31.36496433021253
+440,Pfarrkirchen,"Weißenburg, Bayern",158.85347191176288
+441,Pfarrkirchen,Freising,88.23565616338502
+442,Pfarrkirchen,Moosburg a.d. Isar,74.24600991486847
+443,Pfarrkirchen,Vilsbiburg,43.03239712678897
+444,Pfarrkirchen,Landau a.d. Isar,32.118462932477534
+445,Pfarrkirchen,Mainburg,88.25427559618122
+446,Pfarrkirchen,Abensberg,91.14305178865507
+447,Pfarrkirchen,Schierling,74.12184324657281
+448,Pfarrkirchen,Schrobenhausen,124.12081415271561
+449,Pfarrkirchen,Erding,77.42664153191859
+450,Pfarrkirchen,Pfarrkirchen,0.0
+451,Pfarrkirchen,Osterhofen,30.608385583622912
+452,Pfarrkirchen,Eichstätt,138.70215183082215
+453,Pfarrkirchen,Neuburg a.d. Donau,133.7657640139334
+454,Pfarrkirchen,Kösching,113.79932396229081
+455,Pfarrkirchen,Pfaffenhofen a.d. Ilm,105.96791815161708
+456,Osterhofen,Augsburg,160.57315498574192
+457,Osterhofen,Ingolstadt,117.18189457204838
+458,Osterhofen,Regensburg,76.17459380708334
+459,Osterhofen,Landshut,66.44640785700523
+460,Osterhofen,Straubing,38.59273884202778
+461,Osterhofen,Passau,35.34232451451586
+462,Osterhofen,Deggendorf,15.217652990896898
+463,Osterhofen,Burghausen,61.949146847977055
+464,Osterhofen,"Weißenburg, Bayern",154.20734454994755
+465,Osterhofen,Freising,99.72230178456932
+466,Osterhofen,Moosburg a.d. Isar,84.11569857892432
+467,Osterhofen,Vilsbiburg,56.42092691009255
+468,Osterhofen,Landau a.d. Isar,24.406511009132814
+469,Osterhofen,Mainburg,91.16734112685356
+470,Osterhofen,Abensberg,86.48125404351282
+471,Osterhofen,Schierling,66.38542550122584
+472,Osterhofen,Schrobenhausen,129.89137637519576
+473,Osterhofen,Erding,93.01395770836642
+474,Osterhofen,Pfarrkirchen,30.608385583622912
+475,Osterhofen,Osterhofen,0.0
+476,Osterhofen,Eichstätt,136.16794164583325
+477,Osterhofen,Neuburg a.d. Donau,135.08169103019745
+478,Osterhofen,Kösching,112.06330637120735
+479,Osterhofen,Pfaffenhofen a.d. Ilm,112.76081323456175
+480,Eichstätt,Augsburg,61.971720983274864
+481,Eichstätt,Ingolstadt,22.838544488217025
+482,Eichstätt,Regensburg,68.16450505235173
+483,Eichstätt,Landshut,81.35128459365534
+484,Eichstätt,Straubing,101.33043831274863
+485,Eichstätt,Passau,170.70625191162054
+486,Eichstätt,Deggendorf,130.24054034974964
+487,Eichstätt,Burghausen,146.3417548315353
+488,Eichstätt,"Weißenburg, Bayern",21.734770282735106
+489,Eichstätt,Freising,68.49888577195487
+490,Eichstätt,Moosburg a.d. Isar,72.64752683943642
+491,Eichstätt,Vilsbiburg,99.25651460873311
+492,Eichstätt,Landau a.d. Isar,113.19783110061248
+493,Eichstätt,Mainburg,52.075683119202
+494,Eichstätt,Abensberg,49.69478580786777
+495,Eichstätt,Schierling,70.06207380958058
+496,Eichstätt,Schrobenhausen,37.39830563911603
+497,Eichstätt,Erding,84.20965189518034
+498,Eichstätt,Pfarrkirchen,138.70215183082215
+499,Eichstätt,Osterhofen,136.16794164583325
+500,Eichstätt,Eichstätt,0.0
+501,Eichstätt,Neuburg a.d. Donau,17.365657440789857
+502,Eichstätt,Kösching,24.903675562641556
+503,Eichstätt,Pfaffenhofen a.d. Ilm,46.93020760627251
+504,Neuburg a.d. Donau,Augsburg,45.884573834458024
+505,Neuburg a.d. Donau,Ingolstadt,18.227498356251015
+506,Neuburg a.d. Donau,Regensburg,74.10681165298442
+507,Neuburg a.d. Donau,Landshut,74.84654511160558
+508,Neuburg a.d. Donau,Straubing,103.06567739087377
+509,Neuburg a.d. Donau,Passau,168.54240369818572
+510,Neuburg a.d. Donau,Deggendorf,131.0294732006835
+511,Neuburg a.d. Donau,Burghausen,137.86110355735778
+512,Neuburg a.d. Donau,"Weißenburg, Bayern",35.98201266607438
+513,Neuburg a.d. Donau,Freising,55.88999651128895
+514,Neuburg a.d. Donau,Moosburg a.d. Isar,63.06092156780275
+515,Neuburg a.d. Donau,Vilsbiburg,92.27210203457567
+516,Neuburg a.d. Donau,Landau a.d. Isar,111.18345402201022
+517,Neuburg a.d. Donau,Mainburg,45.51538488633381
+518,Neuburg a.d. Donau,Abensberg,50.776130994054235
+519,Neuburg a.d. Donau,Schierling,71.09460550254
+520,Neuburg a.d. Donau,Schrobenhausen,20.54764095817017
+521,Neuburg a.d. Donau,Erding,71.9011187589721
+522,Neuburg a.d. Donau,Pfarrkirchen,133.7657640139334
+523,Neuburg a.d. Donau,Osterhofen,135.08169103019745
+524,Neuburg a.d. Donau,Eichstätt,17.365657440789857
+525,Neuburg a.d. Donau,Neuburg a.d. Donau,0.0
+526,Neuburg a.d. Donau,Kösching,24.9010020974948
+527,Neuburg a.d. Donau,Pfaffenhofen a.d. Ilm,33.4196303288821
+528,Kösching,Augsburg,66.16298912974618
+529,Kösching,Ingolstadt,7.67139504655617
+530,Kösching,Regensburg,49.415323033965315
+531,Kösching,Landshut,56.74427794360504
+532,Kösching,Straubing,78.64568808277873
+533,Kösching,Passau,146.276690765709
+534,Kösching,Deggendorf,107.03689397073474
+535,Kösching,Burghausen,122.07381394774579
+536,Kösching,"Weißenburg, Bayern",45.69010683584409
+537,Kösching,Freising,48.99164049731937
+538,Kösching,Moosburg a.d. Isar,49.768754325370736
+539,Kösching,Vilsbiburg,74.67395731016009
+540,Kösching,Landau a.d. Isar,88.71863527853041
+541,Kösching,Mainburg,28.029882482193624
+542,Kösching,Abensberg,26.231460666103285
+543,Kösching,Schierling,46.76774222874236
+544,Kösching,Schrobenhausen,32.6749116558822
+545,Kösching,Erding,63.60130006138132
+546,Kösching,Pfarrkirchen,113.79932396229081
+547,Kösching,Osterhofen,112.06330637120735
+548,Kösching,Eichstätt,24.903675562641556
+549,Kösching,Neuburg a.d. Donau,24.9010020974948
+550,Kösching,Kösching,0.0
+551,Kösching,Pfaffenhofen a.d. Ilm,31.27960168996485
+552,Pfaffenhofen a.d. Ilm,Augsburg,48.44300791984974
+553,Pfaffenhofen a.d. Ilm,Ingolstadt,26.66104468182539
+554,Pfaffenhofen a.d. Ilm,Regensburg,69.49673192626273
+555,Pfaffenhofen a.d. Ilm,Landshut,47.362640110371984
+556,Pfaffenhofen a.d. Ilm,Straubing,87.17007135502301
+557,Pfaffenhofen a.d. Ilm,Passau,143.7940286786034
+558,Pfaffenhofen a.d. Ilm,Deggendorf,111.92685859199567
+559,Pfaffenhofen a.d. Ilm,Burghausen,106.21250213689076
+560,Pfaffenhofen a.d. Ilm,"Weißenburg, Bayern",68.17653038859628
+561,Pfaffenhofen a.d. Ilm,Freising,22.509074050750467
+562,Pfaffenhofen a.d. Ilm,Moosburg a.d. Isar,32.07437942784154
+563,Pfaffenhofen a.d. Ilm,Vilsbiburg,63.09142120870583
+564,Pfaffenhofen a.d. Ilm,Landau a.d. Isar,88.35863420175255
+565,Pfaffenhofen a.d. Ilm,Mainburg,23.601825708955907
+566,Pfaffenhofen a.d. Ilm,Abensberg,42.35942836649533
+567,Pfaffenhofen a.d. Ilm,Schierling,57.50347532630495
+568,Pfaffenhofen a.d. Ilm,Schrobenhausen,18.23477647519579
+569,Pfaffenhofen a.d. Ilm,Erding,38.521287923910286
+570,Pfaffenhofen a.d. Ilm,Pfarrkirchen,105.96791815161708
+571,Pfaffenhofen a.d. Ilm,Osterhofen,112.76081323456175
+572,Pfaffenhofen a.d. Ilm,Eichstätt,46.93020760627251
+573,Pfaffenhofen a.d. Ilm,Neuburg a.d. Donau,33.4196303288821
+574,Pfaffenhofen a.d. Ilm,Kösching,31.27960168996485
+575,Pfaffenhofen a.d. Ilm,Pfaffenhofen a.d. Ilm,0.0

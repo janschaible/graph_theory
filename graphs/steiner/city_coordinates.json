@@ -1,0 +1,98 @@
+{
+    "Augsburg": {
+        "lat": 48.3690341,
+        "lon": 10.8979522
+    },
+    "Ingolstadt": {
+        "lat": 48.7630165,
+        "lon": 11.4250395
+    },
+    "Regensburg": {
+        "lat": 49.0195333,
+        "lon": 12.0974869
+    },
+    "Landshut": {
+        "lat": 48.536217,
+        "lon": 12.1516551
+    },
+    "Straubing": {
+        "lat": 48.8819801,
+        "lon": 12.569716
+    },
+    "Passau": {
+        "lat": 48.5748229,
+        "lon": 13.4609744
+    },
+    "Deggendorf": {
+        "lat": 48.8333535,
+        "lon": 12.96205
+    },
+    "Burghausen": {
+        "lat": 48.1588645,
+        "lon": 12.8329419
+    },
+    "Wei\u00dfenburg, Bayern": {
+        "lat": 49.0305748,
+        "lon": 10.9718974
+    },
+    "Freising": {
+        "lat": 48.4008273,
+        "lon": 11.7439565
+    },
+    "Moosburg a.d. Isar": {
+        "lat": 48.4667,
+        "lon": 11.9333
+    },
+    "Vilsbiburg": {
+        "lat": 48.448482,
+        "lon": 12.355795
+    },
+    "Landau a.d. Isar": {
+        "lat": 48.6699678,
+        "lon": 12.6912228
+    },
+    "Mainburg": {
+        "lat": 48.640589,
+        "lon": 11.7820705
+    },
+    "Abensberg": {
+        "lat": 48.8332409,
+        "lon": 11.8570782
+    },
+    "Schierling": {
+        "lat": 48.8374635,
+        "lon": 12.1379497
+    },
+    "Schrobenhausen": {
+        "lat": 48.5613407,
+        "lon": 11.2654488
+    },
+    "Erding": {
+        "lat": 48.3064441,
+        "lon": 11.9076579
+    },
+    "Pfarrkirchen": {
+        "lat": 48.4320329,
+        "lon": 12.9386266
+    },
+    "Osterhofen": {
+        "lat": 48.7019635,
+        "lon": 13.0201434
+    },
+    "Eichst\u00e4tt": {
+        "lat": 48.8933417,
+        "lon": 11.1838965
+    },
+    "Neuburg a.d. Donau": {
+        "lat": 48.7371951,
+        "lon": 11.1795268
+    },
+    "K\u00f6sching": {
+        "lat": 48.8109275,
+        "lon": 11.5003832
+    },
+    "Pfaffenhofen a.d. Ilm": {
+        "lat": 48.5296743,
+        "lon": 11.5084954
+    }
+}
