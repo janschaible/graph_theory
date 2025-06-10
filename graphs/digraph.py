@@ -11,7 +11,7 @@ from disjoint_set import DisjointSet
 
 T = TypeVar("T")
 
-EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, float]]
+EdgeDefinition: TypeAlias = Union[tuple[T, T], tuple[T, T, float], tuple[T, T, float, float]]
 
 class DiGraph(Generic[T]):
     def __init__(self, *edges: EdgeDefinition[T], **kwargs) -> None:
@@ -23,20 +23,26 @@ class DiGraph(Generic[T]):
         self._adjacency_list: dict[int, list[int]]  = {}
         self.labels: dict[int, T] = {}
         self.weights: dict[int, dict[int, float]] = {}
+        self.capacities: dict[int, dict[int, float]] = {}
         self.weighted = None
 
         for v in kwargs.get("vertices", []):
             self.add_vertex(v)
 
         for edge in edges:
+            weight = None
+            capacity = None
             if len(edge) == 2:
                 from_v, to_v = edge
-                weight = None
                 self.weighted = False
-            else:
+            elif len(edge) == 3:
                 from_v, to_v, weight = edge
                 self.weighted = True
-            self.add_edge(from_v, to_v, weight)
+            else:
+                from_v, to_v, weight, capacity = edge
+                self.weighted = True
+
+            self.add_edge(from_v, to_v, weight, capacity)
 
     def add_vertex(self, v: T)->int:
         assert self._get_index_of(v) is None, f"tired to add vertex {v} but was already present"
@@ -61,7 +67,7 @@ class DiGraph(Generic[T]):
         # todo js this disregards any sinks fix this
         return list(self.get_adjacency_list().keys())
 
-    def add_edge(self, from_v: T, to_v: T, weight: Optional[float]=None)->None:
+    def add_edge(self, from_v: T, to_v: T, weight: Optional[float]=None, capacity: Optional[float]=None)->None:
         from_index = self._get_or_create_vertex(from_v)
         to_index = self._get_or_create_vertex(to_v)
         assert to_index not in self._adjacency_list[from_index], f"edge from {from_v} to {to_v} is already present"
@@ -70,6 +76,8 @@ class DiGraph(Generic[T]):
         assert weight is not None if self.weighted else weight is None, f"cannot use weight of {weight} either all edges have weights or none of them"
         if weight is not None:
             self.weights.setdefault(from_index, {})[to_index] = weight
+        if capacity is not None:
+            self.capacities.setdefault(from_index, {})[to_index] = capacity
 
     def delete_edge(self, from_v: T, to_v: T):
         from_index = self.get_present_index_of(from_v)
@@ -457,3 +465,55 @@ class DiGraph(Generic[T]):
             self.labels[from_v]: {self.labels[to_v] for to_v in to_vs}
             for from_v, to_vs in tree.items()
         }
+
+    def ford_and_fulkerson(self, start_v: T, end_v: T):
+        """maxflow algorithm"""
+        s = self.get_present_index_of(start_v)
+        t = self.get_present_index_of(end_v)
+        f = {from_v: {to_v:0 for to_v in values.keys() } for from_v, values in self.capacities.items()}
+        
+        labels: dict[int, Optional[tuple[Optional[int], str, float]]] = {v: None for v in self.get_indices()}
+        labels[s] = (None, "-", float("inf"))
+        u: dict[int, bool] = {u: False for u in self.get_indices()}
+        d: dict[int, float] = {u: float("inf") for u in self.get_indices()}
+
+        while True:
+            v = [v for v,label in labels.items() if label is not None and not u[v]].pop()
+
+            # for every outgoing edge of v
+            for w in self._adjacency_list[v]:
+                if labels[w] is None and f[v][w] < self.capacities[v][w]:
+                    d[w] = min(self.capacities[v][w]-f[v][w], d[v])
+                    labels[w] = (v, "+", d[w])
+
+            incoming = [u for u, values in self._adjacency_list.items() if v in values]
+            # for every incoming edge of v
+            for w in incoming:
+                if labels[w] is None and f[w][v] > 0:
+                    d[w] = min(f[w][v], d[v])
+                    labels[w] = (v, "-", d[w])
+
+            u[v] = True
+            label_of_t = labels[t]
+            if label_of_t is not None:
+                _,_,diff = label_of_t
+                w = t
+                while w != s:
+                    predecessor,sign,_ = labels[w] # type: ignore
+                    if sign == "+":
+                        f[predecessor][w] += diff # type: ignore
+                    else:
+                        f[predecessor][w]-= diff # type: ignore
+                    w = predecessor
+
+                # prepare for next round
+                labels: dict[int, Optional[tuple[Optional[int], str, float]]] = {v: None for v in self.get_indices()}
+                labels[s] = (None, "-", float("inf"))
+                u: dict[int, bool] = {u: False for u in self.get_indices()}
+                d: dict[int, float] = {u: float("inf") for u in self.get_indices()}
+            if all([u[v] for v, label in labels.items() if label is not None]):
+                break
+
+        part_1 = [self.labels[v] for v, label in labels.items() if label is not None]
+        part_2 = [self.labels[v] for v, label in labels.items() if label is None]
+        return f, part_1, part_2

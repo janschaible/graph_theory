@@ -176,3 +176,23 @@ class TestDigraph(AbstractGraphTest):
 
         print(girth)
         assert girth == 3
+    
+    def test_ford_and_fulkerson(self):
+        graph = DiGraph(
+            ("s","a",0,10),
+            ("a","d",0,10),
+            ("d","s",0,5),
+            ("d","c",0,6),
+            ("d","e",0,5),
+            ("c","a",0,6),
+            ("c","t",0,4),
+            ("e","b",0,5),
+            ("e","t",0,5),
+            ("b","d",0,4),
+            vertices=["s", "a", "d", "e", "c", "b", "t"]
+        )
+        f,S,T = graph.ford_and_fulkerson("s", "t")
+        print(f)
+        print(S)
+        print(T)
+

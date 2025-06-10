@@ -11,9 +11,9 @@ class Graph(DiGraph[T]):
         super().__init__(*edges, **kwargs)
 
     @override
-    def add_edge(self, from_v: T, to_v: T, weight: Optional[float] = None)->None:
-        super().add_edge(from_v, to_v, weight)
-        super().add_edge(to_v, from_v, weight)
+    def add_edge(self, from_v: T, to_v: T, weight: Optional[float] = None, capacity: Optional[float] = None)->None:
+        super().add_edge(from_v, to_v, weight, capacity)
+        super().add_edge(to_v, from_v, weight, capacity)
 
     @override
     def delete_edge(self, from_v: T, to_v: T):

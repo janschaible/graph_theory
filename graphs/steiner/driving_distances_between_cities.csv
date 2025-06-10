@@ -1,577 +1,626 @@
 ,from,to,distance
-0,Augsburg,Augsburg,0.0
-1,Augsburg,Ingolstadt,82558.3
-2,Augsburg,Regensburg,148181.3
-3,Augsburg,Landshut,124735.9
-4,Augsburg,Straubing,194521.5
-5,Augsburg,Passau,244460.6
-6,Augsburg,Deggendorf,196450.3
-7,Augsburg,Burghausen,179395.0
-8,Augsburg,"Weißenburg, Bayern",85505.9
-9,Augsburg,Freising,90989.3
-10,Augsburg,Moosburg a.d. Isar,105118.8
-11,Augsburg,Vilsbiburg,142474.5
-12,Augsburg,Landau a.d. Isar,171635.0
-13,Augsburg,Mainburg,93552.5
-14,Augsburg,Abensberg,105013.4
-15,Augsburg,Schierling,138111.8
-16,Augsburg,Schrobenhausen,44597.4
-17,Augsburg,Erding,101053.3
-18,Augsburg,Pfarrkirchen,191166.7
-19,Augsburg,Osterhofen,201385.4
-20,Augsburg,Eichstätt,90975.2
-21,Augsburg,Neuburg a.d. Donau,68910.1
-22,Augsburg,Kösching,90170.1
-23,Augsburg,Pfaffenhofen a.d. Ilm,60735.1
-24,Ingolstadt,Augsburg,82558.3
-25,Ingolstadt,Ingolstadt,0.0
-26,Ingolstadt,Regensburg,97917.0
-27,Ingolstadt,Landshut,106863.8
-28,Ingolstadt,Straubing,138992.3
-29,Ingolstadt,Passau,214037.6
-30,Ingolstadt,Deggendorf,166367.9
-31,Ingolstadt,Burghausen,179055.8
-32,Ingolstadt,"Weißenburg, Bayern",52742.2
-33,Ingolstadt,Freising,57731.8
-34,Ingolstadt,Moosburg a.d. Isar,65691.8
-35,Ingolstadt,Vilsbiburg,124602.4
-36,Ingolstadt,Landau a.d. Isar,118660.2
-37,Ingolstadt,Mainburg,42877.5
-38,Ingolstadt,Abensberg,44165.4
-39,Ingolstadt,Schierling,87436.8
-40,Ingolstadt,Schrobenhausen,41155.2
-41,Ingolstadt,Erding,84206.3
-42,Ingolstadt,Pfarrkirchen,191203.1
-43,Ingolstadt,Osterhofen,183240.8
-44,Ingolstadt,Eichstätt,27238.1
-45,Ingolstadt,Neuburg a.d. Donau,24075.4
-46,Ingolstadt,Kösching,9626.4
-47,Ingolstadt,Pfaffenhofen a.d. Ilm,38051.8
-48,Regensburg,Augsburg,148181.3
-49,Regensburg,Ingolstadt,97917.0
-50,Regensburg,Regensburg,0.0
-51,Regensburg,Landshut,66776.2
-52,Regensburg,Straubing,46675.9
-53,Regensburg,Passau,121721.2
-54,Regensburg,Deggendorf,74051.5
-55,Regensburg,Burghausen,146436.1
-56,Regensburg,"Weißenburg, Bayern",147853.1
-57,Regensburg,Freising,104919.7
-58,Regensburg,Moosburg a.d. Isar,85742.1
-59,Regensburg,Vilsbiburg,84610.7
-60,Regensburg,Landau a.d. Isar,75882.6
-61,Regensburg,Mainburg,57308.4
-62,Regensburg,Abensberg,42583.1
-63,Regensburg,Schierling,28398.0
-64,Regensburg,Schrobenhausen,106778.2
-65,Regensburg,Erding,107800.8
-66,Regensburg,Pfarrkirchen,112451.3
-67,Regensburg,Osterhofen,91884.2
-68,Regensburg,Eichstätt,90723.4
-69,Regensburg,Neuburg a.d. Donau,113902.6
-70,Regensburg,Kösching,74015.9
-71,Regensburg,Pfaffenhofen a.d. Ilm,84995.0
-72,Landshut,Augsburg,124735.9
-73,Landshut,Ingolstadt,106863.8
-74,Landshut,Regensburg,66776.2
-75,Landshut,Landshut,0.0
-76,Landshut,Straubing,72065.4
-77,Landshut,Passau,122004.5
-78,Landshut,Deggendorf,73994.2
-79,Landshut,Burghausen,83156.0
-80,Landshut,"Weißenburg, Bayern",130105.9
-81,Landshut,Freising,40455.1
-82,Landshut,Moosburg a.d. Isar,21277.5
-83,Landshut,Vilsbiburg,21330.6
-84,Landshut,Landau a.d. Isar,49567.8
-85,Landshut,Mainburg,37114.4
-86,Landshut,Abensberg,51163.4
-87,Landshut,Schierling,41774.1
-88,Landshut,Schrobenhausen,100740.7
-89,Landshut,Erding,43012.1
-90,Landshut,Pfarrkirchen,72033.0
-91,Landshut,Osterhofen,79318.2
-92,Landshut,Eichstätt,136180.5
-93,Landshut,Neuburg a.d. Donau,122849.4
-94,Landshut,Kösching,75052.9
-95,Landshut,Pfaffenhofen a.d. Ilm,80115.9
-96,Straubing,Augsburg,194521.5
-97,Straubing,Ingolstadt,138992.3
-98,Straubing,Regensburg,46675.9
-99,Straubing,Landshut,72065.4
-100,Straubing,Straubing,0.0
-101,Straubing,Passau,88138.1
-102,Straubing,Deggendorf,40468.4
-103,Straubing,Burghausen,103256.1
-104,Straubing,"Weißenburg, Bayern",187731.3
-105,Straubing,Freising,109461.2
-106,Straubing,Moosburg a.d. Isar,90283.6
-107,Straubing,Vilsbiburg,70157.0
-108,Straubing,Landau a.d. Isar,31143.1
-109,Straubing,Mainburg,98383.7
-110,Straubing,Abensberg,83658.4
-111,Straubing,Schierling,40420.8
-112,Straubing,Schrobenhausen,147853.5
-113,Straubing,Erding,112797.7
-114,Straubing,Pfarrkirchen,67711.9
-115,Straubing,Osterhofen,58387.0
-116,Straubing,Eichstätt,131798.7
-117,Straubing,Neuburg a.d. Donau,154977.9
-118,Straubing,Kösching,115091.2
-119,Straubing,Pfaffenhofen a.d. Ilm,126070.3
-120,Passau,Augsburg,244460.6
-121,Passau,Ingolstadt,214037.6
-122,Passau,Regensburg,121721.2
-123,Passau,Landshut,122004.5
-124,Passau,Straubing,88138.1
-125,Passau,Passau,0.0
-126,Passau,Deggendorf,52734.7
-127,Passau,Burghausen,84210.2
-128,Passau,"Weißenburg, Bayern",261615.8
-129,Passau,Freising,157944.8
-130,Passau,Moosburg a.d. Isar,138767.2
-131,Passau,Vilsbiburg,107669.9
-132,Passau,Landau a.d. Isar,81511.9
-133,Passau,Mainburg,150097.7
-134,Passau,Abensberg,158703.7
-135,Passau,Schierling,141408.9
-136,Passau,Schrobenhausen,222898.8
-137,Passau,Erding,162736.8
-138,Passau,Pfarrkirchen,58528.2
-139,Passau,Osterhofen,39141.6
-140,Passau,Eichstätt,206844.0
-141,Passau,Neuburg a.d. Donau,230023.2
-142,Passau,Kösching,190136.5
-143,Passau,Pfaffenhofen a.d. Ilm,199840.6
-144,Deggendorf,Augsburg,196450.3
-145,Deggendorf,Ingolstadt,166367.9
-146,Deggendorf,Regensburg,74051.5
-147,Deggendorf,Landshut,73994.2
-148,Deggendorf,Straubing,40468.4
-149,Deggendorf,Passau,52734.7
-150,Deggendorf,Deggendorf,0.0
-151,Deggendorf,Burghausen,106036.6
-152,Deggendorf,"Weißenburg, Bayern",213838.0
-153,Deggendorf,Freising,111825.5
-154,Deggendorf,Moosburg a.d. Isar,92647.9
-155,Deggendorf,Vilsbiburg,72521.2
-156,Deggendorf,Landau a.d. Isar,33501.6
-157,Deggendorf,Mainburg,102087.5
-158,Deggendorf,Abensberg,111034.0
-159,Deggendorf,Schierling,93398.6
-160,Deggendorf,Schrobenhausen,175229.1
-161,Deggendorf,Erding,114726.5
-162,Deggendorf,Pfarrkirchen,70070.3
-163,Deggendorf,Osterhofen,24645.0
-164,Deggendorf,Eichstätt,159174.3
-165,Deggendorf,Neuburg a.d. Donau,182353.5
-166,Deggendorf,Kösching,142466.8
-167,Deggendorf,Pfaffenhofen a.d. Ilm,151830.3
-168,Burghausen,Augsburg,179395.0
-169,Burghausen,Ingolstadt,179055.8
-170,Burghausen,Regensburg,146436.1
-171,Burghausen,Landshut,83156.0
-172,Burghausen,Straubing,103256.1
-173,Burghausen,Passau,84210.2
-174,Burghausen,Deggendorf,106036.6
-175,Burghausen,Burghausen,0.0
-176,Burghausen,"Weißenburg, Bayern",234093.9
-177,Burghausen,Freising,115626.5
-178,Burghausen,Moosburg a.d. Isar,106241.1
-179,Burghausen,Vilsbiburg,60706.6
-180,Burghausen,Landau a.d. Isar,74609.6
-181,Burghausen,Mainburg,116731.8
-182,Burghausen,Abensberg,130780.8
-183,Burghausen,Schierling,121434.0
-184,Burghausen,Schrobenhausen,172932.7
-185,Burghausen,Erding,92395.9
-186,Burghausen,Pfarrkirchen,40513.4
-187,Burghausen,Osterhofen,78318.1
-188,Burghausen,Eichstätt,208372.5
-189,Burghausen,Neuburg a.d. Donau,195041.4
-190,Burghausen,Kösching,185467.5
-191,Burghausen,Pfaffenhofen a.d. Ilm,152307.9
-192,"Weißenburg, Bayern",Augsburg,85505.9
-193,"Weißenburg, Bayern",Ingolstadt,52742.2
-194,"Weißenburg, Bayern",Regensburg,147853.1
-195,"Weißenburg, Bayern",Landshut,130105.9
-196,"Weißenburg, Bayern",Straubing,187731.3
-197,"Weißenburg, Bayern",Passau,261615.8
-198,"Weißenburg, Bayern",Deggendorf,213838.0
-199,"Weißenburg, Bayern",Burghausen,234093.9
-200,"Weißenburg, Bayern","Weißenburg, Bayern",0.0
-201,"Weißenburg, Bayern",Freising,113819.3
-202,"Weißenburg, Bayern",Moosburg a.d. Isar,121779.3
-203,"Weißenburg, Bayern",Vilsbiburg,180689.9
-204,"Weißenburg, Bayern",Landau a.d. Isar,217524.5
-205,"Weißenburg, Bayern",Mainburg,97646.3
-206,"Weißenburg, Bayern",Abensberg,97173.8
-207,"Weißenburg, Bayern",Schierling,163298.7
-208,"Weißenburg, Bayern",Schrobenhausen,71377.1
-209,"Weißenburg, Bayern",Erding,138975.1
-210,"Weißenburg, Bayern",Pfarrkirchen,245972.0
-211,"Weißenburg, Bayern",Osterhofen,233526.2
-212,"Weißenburg, Bayern",Eichstätt,28033.1
-213,"Weißenburg, Bayern",Neuburg a.d. Donau,47531.9
-214,"Weißenburg, Bayern",Kösching,53203.3
-215,"Weißenburg, Bayern",Pfaffenhofen a.d. Ilm,92820.6
-216,Freising,Augsburg,90989.3
-217,Freising,Ingolstadt,57731.8
-218,Freising,Regensburg,104919.7
-219,Freising,Landshut,40455.1
-220,Freising,Straubing,109461.2
-221,Freising,Passau,157944.8
-222,Freising,Deggendorf,111825.5
-223,Freising,Burghausen,115626.5
-224,Freising,"Weißenburg, Bayern",113819.3
-225,Freising,Freising,0.0
-226,Freising,Moosburg a.d. Isar,17623.8
-227,Freising,Vilsbiburg,59429.6
-228,Freising,Landau a.d. Isar,87711.3
-229,Freising,Mainburg,31323.8
-230,Freising,Abensberg,71384.4
-231,Freising,Schierling,79917.6
-232,Freising,Schrobenhausen,45381.6
-233,Freising,Erding,20993.8
-234,Freising,Pfarrkirchen,108479.3
-235,Freising,Osterhofen,117461.7
-236,Freising,Eichstätt,87048.5
-237,Freising,Neuburg a.d. Donau,73717.4
-238,Freising,Kösching,64143.4
-239,Freising,Pfaffenhofen a.d. Ilm,30983.9
-240,Moosburg a.d. Isar,Augsburg,105118.8
-241,Moosburg a.d. Isar,Ingolstadt,65691.8
-242,Moosburg a.d. Isar,Regensburg,85742.1
-243,Moosburg a.d. Isar,Landshut,21277.5
-244,Moosburg a.d. Isar,Straubing,90283.6
-245,Moosburg a.d. Isar,Passau,138767.2
-246,Moosburg a.d. Isar,Deggendorf,92647.9
-247,Moosburg a.d. Isar,Burghausen,106241.1
-248,Moosburg a.d. Isar,"Weißenburg, Bayern",121779.3
-249,Moosburg a.d. Isar,Freising,17623.8
-250,Moosburg a.d. Isar,Moosburg a.d. Isar,0.0
-251,Moosburg a.d. Isar,Vilsbiburg,38262.1
-252,Moosburg a.d. Isar,Landau a.d. Isar,68533.7
-253,Moosburg a.d. Isar,Mainburg,26697.4
-254,Moosburg a.d. Isar,Abensberg,49426.9
-255,Moosburg a.d. Isar,Schierling,60740.0
-256,Moosburg a.d. Isar,Schrobenhausen,57314.2
-257,Moosburg a.d. Isar,Erding,21132.9
-258,Moosburg a.d. Isar,Pfarrkirchen,88917.3
-259,Moosburg a.d. Isar,Osterhofen,98284.1
-260,Moosburg a.d. Isar,Eichstätt,95008.5
-261,Moosburg a.d. Isar,Neuburg a.d. Donau,81677.4
-262,Moosburg a.d. Isar,Kösching,72103.5
-263,Moosburg a.d. Isar,Pfaffenhofen a.d. Ilm,38430.4
-264,Vilsbiburg,Augsburg,142474.5
-265,Vilsbiburg,Ingolstadt,124602.4
-266,Vilsbiburg,Regensburg,84610.7
-267,Vilsbiburg,Landshut,21330.6
-268,Vilsbiburg,Straubing,70157.0
-269,Vilsbiburg,Passau,107669.9
-270,Vilsbiburg,Deggendorf,72521.2
-271,Vilsbiburg,Burghausen,60706.6
-272,Vilsbiburg,"Weißenburg, Bayern",180689.9
-273,Vilsbiburg,Freising,59429.6
-274,Vilsbiburg,Moosburg a.d. Isar,38262.1
-275,Vilsbiburg,Vilsbiburg,0.0
-276,Vilsbiburg,Landau a.d. Isar,48407.0
-277,Vilsbiburg,Mainburg,54906.4
-278,Vilsbiburg,Abensberg,68955.4
-279,Vilsbiburg,Schierling,59608.6
-280,Vilsbiburg,Schrobenhausen,118479.3
-281,Vilsbiburg,Erding,41522.4
-282,Vilsbiburg,Pfarrkirchen,49375.2
-283,Vilsbiburg,Osterhofen,71678.2
-284,Vilsbiburg,Eichstätt,153919.1
-285,Vilsbiburg,Neuburg a.d. Donau,140588.0
-286,Vilsbiburg,Kösching,92844.9
-287,Vilsbiburg,Pfaffenhofen a.d. Ilm,97854.5
-288,Landau a.d. Isar,Augsburg,171635.0
-289,Landau a.d. Isar,Ingolstadt,118660.2
-290,Landau a.d. Isar,Regensburg,75882.6
-291,Landau a.d. Isar,Landshut,49567.8
-292,Landau a.d. Isar,Straubing,31143.1
-293,Landau a.d. Isar,Passau,81511.9
-294,Landau a.d. Isar,Deggendorf,33501.6
-295,Landau a.d. Isar,Burghausen,74609.6
-296,Landau a.d. Isar,"Weißenburg, Bayern",217524.5
-297,Landau a.d. Isar,Freising,87711.3
-298,Landau a.d. Isar,Moosburg a.d. Isar,68533.7
-299,Landau a.d. Isar,Vilsbiburg,48407.0
-300,Landau a.d. Isar,Landau a.d. Isar,0.0
-301,Landau a.d. Isar,Mainburg,77791.2
-302,Landau a.d. Isar,Abensberg,99288.7
-303,Landau a.d. Isar,Schierling,69102.4
-304,Landau a.d. Isar,Schrobenhausen,127662.9
-305,Landau a.d. Isar,Erding,90430.3
-306,Landau a.d. Isar,Pfarrkirchen,38020.7
-307,Landau a.d. Isar,Osterhofen,38017.8
-308,Landau a.d. Isar,Eichstätt,148118.4
-309,Landau a.d. Isar,Neuburg a.d. Donau,134787.3
-310,Landau a.d. Isar,Kösching,115729.7
-311,Landau a.d. Isar,Pfaffenhofen a.d. Ilm,127534.1
-312,Mainburg,Augsburg,93552.5
-313,Mainburg,Ingolstadt,42877.5
-314,Mainburg,Regensburg,57308.4
-315,Mainburg,Landshut,37114.4
-316,Mainburg,Straubing,98383.7
-317,Mainburg,Passau,150097.7
-318,Mainburg,Deggendorf,102087.5
-319,Mainburg,Burghausen,116731.8
-320,Mainburg,"Weißenburg, Bayern",97646.3
-321,Mainburg,Freising,31323.8
-322,Mainburg,Moosburg a.d. Isar,26697.4
-323,Mainburg,Vilsbiburg,54906.4
-324,Mainburg,Landau a.d. Isar,77791.2
-325,Mainburg,Mainburg,0.0
-326,Mainburg,Abensberg,24035.4
-327,Mainburg,Schierling,46523.6
-328,Mainburg,Schrobenhausen,52169.5
-329,Mainburg,Erding,49709.1
-330,Mainburg,Pfarrkirchen,105509.8
-331,Mainburg,Osterhofen,107567.5
-332,Mainburg,Eichstätt,72625.0
-333,Mainburg,Neuburg a.d. Donau,59293.9
-334,Mainburg,Kösching,49719.9
-335,Mainburg,Pfaffenhofen a.d. Ilm,30386.2
-336,Abensberg,Augsburg,105013.4
-337,Abensberg,Ingolstadt,44165.4
-338,Abensberg,Regensburg,42583.1
-339,Abensberg,Landshut,51163.4
-340,Abensberg,Straubing,83658.4
-341,Abensberg,Passau,158703.7
-342,Abensberg,Deggendorf,111034.0
-343,Abensberg,Burghausen,130780.8
-344,Abensberg,"Weißenburg, Bayern",97173.8
-345,Abensberg,Freising,71384.4
-346,Abensberg,Moosburg a.d. Isar,49426.9
-347,Abensberg,Vilsbiburg,68955.4
-348,Abensberg,Landau a.d. Isar,99288.7
-349,Abensberg,Mainburg,24035.4
-350,Abensberg,Abensberg,0.0
-351,Abensberg,Schierling,32686.1
-352,Abensberg,Schrobenhausen,62112.5
-353,Abensberg,Erding,82950.5
-354,Abensberg,Pfarrkirchen,136457.4
-355,Abensberg,Osterhofen,128490.2
-356,Abensberg,Eichstätt,69578.8
-357,Abensberg,Neuburg a.d. Donau,59002.4
-358,Abensberg,Kösching,37378.7
-359,Abensberg,Pfaffenhofen a.d. Ilm,52334.6
-360,Schierling,Augsburg,138111.8
-361,Schierling,Ingolstadt,87436.8
-362,Schierling,Regensburg,28398.0
-363,Schierling,Landshut,41774.1
-364,Schierling,Straubing,40420.8
-365,Schierling,Passau,141408.9
-366,Schierling,Deggendorf,93398.6
-367,Schierling,Burghausen,121434.0
-368,Schierling,"Weißenburg, Bayern",163298.7
-369,Schierling,Freising,79917.6
-370,Schierling,Moosburg a.d. Isar,60740.0
-371,Schierling,Vilsbiburg,59608.6
-372,Schierling,Landau a.d. Isar,69102.4
-373,Schierling,Mainburg,46523.6
-374,Schierling,Abensberg,32686.1
-375,Schierling,Schierling,0.0
-376,Schierling,Schrobenhausen,96657.4
-377,Schierling,Erding,82009.5
-378,Schierling,Pfarrkirchen,106378.0
-379,Schierling,Osterhofen,99559.7
-380,Schierling,Eichstätt,117112.9
-381,Schierling,Neuburg a.d. Donau,103781.8
-382,Schierling,Kösching,63895.1
-383,Schierling,Pfaffenhofen a.d. Ilm,74874.1
-384,Schrobenhausen,Augsburg,44597.4
-385,Schrobenhausen,Ingolstadt,41155.2
-386,Schrobenhausen,Regensburg,106778.2
-387,Schrobenhausen,Landshut,100740.7
-388,Schrobenhausen,Straubing,147853.5
-389,Schrobenhausen,Passau,222898.8
-390,Schrobenhausen,Deggendorf,175229.1
-391,Schrobenhausen,Burghausen,172932.7
-392,Schrobenhausen,"Weißenburg, Bayern",71377.1
-393,Schrobenhausen,Freising,45381.6
-394,Schrobenhausen,Moosburg a.d. Isar,57314.2
-395,Schrobenhausen,Vilsbiburg,118479.3
-396,Schrobenhausen,Landau a.d. Isar,127662.9
-397,Schrobenhausen,Mainburg,52169.5
-398,Schrobenhausen,Abensberg,62112.5
-399,Schrobenhausen,Schierling,96657.4
-400,Schrobenhausen,Schrobenhausen,0.0
-401,Schrobenhausen,Erding,77901.5
-402,Schrobenhausen,Pfarrkirchen,184898.4
-403,Schrobenhausen,Osterhofen,192556.3
-404,Schrobenhausen,Eichstätt,46730.5
-405,Schrobenhausen,Neuburg a.d. Donau,25634.5
-406,Schrobenhausen,Kösching,48810.6
-407,Schrobenhausen,Pfaffenhofen a.d. Ilm,22178.2
-408,Erding,Augsburg,101053.3
-409,Erding,Ingolstadt,84206.3
-410,Erding,Regensburg,107800.8
-411,Erding,Landshut,43012.1
-412,Erding,Straubing,112797.7
-413,Erding,Passau,162736.8
-414,Erding,Deggendorf,114726.5
-415,Erding,Burghausen,92395.9
-416,Erding,"Weißenburg, Bayern",138975.1
-417,Erding,Freising,20993.8
-418,Erding,Moosburg a.d. Isar,21132.9
-419,Erding,Vilsbiburg,41522.4
-420,Erding,Landau a.d. Isar,90430.3
-421,Erding,Mainburg,49709.1
-422,Erding,Abensberg,82950.5
-423,Erding,Schierling,82009.5
-424,Erding,Schrobenhausen,77901.5
-425,Erding,Erding,0.0
-426,Erding,Pfarrkirchen,104595.8
-427,Erding,Osterhofen,119221.0
-428,Erding,Eichstätt,112673.6
-429,Erding,Neuburg a.d. Donau,99342.5
-430,Erding,Kösching,89768.5
-431,Erding,Pfaffenhofen a.d. Ilm,56609.0
-432,Pfarrkirchen,Augsburg,191166.7
-433,Pfarrkirchen,Ingolstadt,191203.1
-434,Pfarrkirchen,Regensburg,112451.3
-435,Pfarrkirchen,Landshut,72033.0
-436,Pfarrkirchen,Straubing,67711.9
-437,Pfarrkirchen,Passau,58528.2
-438,Pfarrkirchen,Deggendorf,70070.3
-439,Pfarrkirchen,Burghausen,40513.4
-440,Pfarrkirchen,"Weißenburg, Bayern",245972.0
-441,Pfarrkirchen,Freising,108479.3
-442,Pfarrkirchen,Moosburg a.d. Isar,88917.3
-443,Pfarrkirchen,Vilsbiburg,49375.2
-444,Pfarrkirchen,Landau a.d. Isar,38020.7
-445,Pfarrkirchen,Mainburg,105509.8
-446,Pfarrkirchen,Abensberg,136457.4
-447,Pfarrkirchen,Schierling,106378.0
-448,Pfarrkirchen,Schrobenhausen,184898.4
-449,Pfarrkirchen,Erding,104595.8
-450,Pfarrkirchen,Pfarrkirchen,0.0
-451,Pfarrkirchen,Osterhofen,37917.4
-452,Pfarrkirchen,Eichstätt,220147.8
-453,Pfarrkirchen,Neuburg a.d. Donau,206816.7
-454,Pfarrkirchen,Kösching,197242.8
-455,Pfarrkirchen,Pfaffenhofen a.d. Ilm,164083.2
-456,Osterhofen,Augsburg,201385.4
-457,Osterhofen,Ingolstadt,183240.8
-458,Osterhofen,Regensburg,91884.2
-459,Osterhofen,Landshut,79318.2
-460,Osterhofen,Straubing,58387.0
-461,Osterhofen,Passau,39141.6
-462,Osterhofen,Deggendorf,24645.0
-463,Osterhofen,Burghausen,78318.1
-464,Osterhofen,"Weißenburg, Bayern",233526.2
-465,Osterhofen,Freising,117461.7
-466,Osterhofen,Moosburg a.d. Isar,98284.1
-467,Osterhofen,Vilsbiburg,71678.2
-468,Osterhofen,Landau a.d. Isar,38017.8
-469,Osterhofen,Mainburg,107567.5
-470,Osterhofen,Abensberg,128490.2
-471,Osterhofen,Schierling,99559.7
-472,Osterhofen,Schrobenhausen,192556.3
-473,Osterhofen,Erding,119221.0
-474,Osterhofen,Pfarrkirchen,37917.4
-475,Osterhofen,Osterhofen,0.0
-476,Osterhofen,Eichstätt,177562.7
-477,Osterhofen,Neuburg a.d. Donau,200741.9
-478,Osterhofen,Kösching,160855.2
-479,Osterhofen,Pfaffenhofen a.d. Ilm,157789.8
-480,Eichstätt,Augsburg,90975.2
-481,Eichstätt,Ingolstadt,27238.1
-482,Eichstätt,Regensburg,90723.4
-483,Eichstätt,Landshut,136180.5
-484,Eichstätt,Straubing,131798.7
-485,Eichstätt,Passau,206844.0
-486,Eichstätt,Deggendorf,159174.3
-487,Eichstätt,Burghausen,208372.5
-488,Eichstätt,"Weißenburg, Bayern",28033.1
-489,Eichstätt,Freising,87048.5
-490,Eichstätt,Moosburg a.d. Isar,95008.5
-491,Eichstätt,Vilsbiburg,153919.1
-492,Eichstätt,Landau a.d. Isar,148118.4
-493,Eichstätt,Mainburg,72625.0
-494,Eichstätt,Abensberg,69578.8
-495,Eichstätt,Schierling,117112.9
-496,Eichstätt,Schrobenhausen,46730.5
-497,Eichstätt,Erding,112673.6
-498,Eichstätt,Pfarrkirchen,220147.8
-499,Eichstätt,Osterhofen,177562.7
-500,Eichstätt,Eichstätt,0.0
-501,Eichstätt,Neuburg a.d. Donau,22569.9
-502,Eichstätt,Kösching,28241.2
-503,Eichstätt,Pfaffenhofen a.d. Ilm,67858.6
-504,Neuburg a.d. Donau,Augsburg,68910.1
-505,Neuburg a.d. Donau,Ingolstadt,24075.4
-506,Neuburg a.d. Donau,Regensburg,113902.6
-507,Neuburg a.d. Donau,Landshut,122849.4
-508,Neuburg a.d. Donau,Straubing,154977.9
-509,Neuburg a.d. Donau,Passau,230023.2
-510,Neuburg a.d. Donau,Deggendorf,182353.5
-511,Neuburg a.d. Donau,Burghausen,195041.4
-512,Neuburg a.d. Donau,"Weißenburg, Bayern",47531.9
-513,Neuburg a.d. Donau,Freising,73717.4
-514,Neuburg a.d. Donau,Moosburg a.d. Isar,81677.4
-515,Neuburg a.d. Donau,Vilsbiburg,140588.0
-516,Neuburg a.d. Donau,Landau a.d. Isar,134787.3
-517,Neuburg a.d. Donau,Mainburg,59293.9
-518,Neuburg a.d. Donau,Abensberg,59002.4
-519,Neuburg a.d. Donau,Schierling,103781.8
-520,Neuburg a.d. Donau,Schrobenhausen,25634.5
-521,Neuburg a.d. Donau,Erding,99342.5
-522,Neuburg a.d. Donau,Pfarrkirchen,206816.7
-523,Neuburg a.d. Donau,Osterhofen,200741.9
-524,Neuburg a.d. Donau,Eichstätt,22569.9
-525,Neuburg a.d. Donau,Neuburg a.d. Donau,0.0
-526,Neuburg a.d. Donau,Kösching,32462.6
-527,Neuburg a.d. Donau,Pfaffenhofen a.d. Ilm,41052.0
-528,Kösching,Augsburg,90170.1
-529,Kösching,Ingolstadt,9626.4
-530,Kösching,Regensburg,74015.9
-531,Kösching,Landshut,75052.9
-532,Kösching,Straubing,115091.2
-533,Kösching,Passau,190136.5
-534,Kösching,Deggendorf,142466.8
-535,Kösching,Burghausen,185467.5
-536,Kösching,"Weißenburg, Bayern",53203.3
-537,Kösching,Freising,64143.4
-538,Kösching,Moosburg a.d. Isar,72103.5
-539,Kösching,Vilsbiburg,92844.9
-540,Kösching,Landau a.d. Isar,115729.7
-541,Kösching,Mainburg,49719.9
-542,Kösching,Abensberg,37378.7
-543,Kösching,Schierling,63895.1
-544,Kösching,Schrobenhausen,48810.6
-545,Kösching,Erding,89768.5
-546,Kösching,Pfarrkirchen,197242.8
-547,Kösching,Osterhofen,160855.2
-548,Kösching,Eichstätt,28241.2
-549,Kösching,Neuburg a.d. Donau,32462.6
-550,Kösching,Kösching,0.0
-551,Kösching,Pfaffenhofen a.d. Ilm,44761.3
-552,Pfaffenhofen a.d. Ilm,Augsburg,60735.1
-553,Pfaffenhofen a.d. Ilm,Ingolstadt,38051.8
-554,Pfaffenhofen a.d. Ilm,Regensburg,84995.0
-555,Pfaffenhofen a.d. Ilm,Landshut,80115.9
-556,Pfaffenhofen a.d. Ilm,Straubing,126070.3
-557,Pfaffenhofen a.d. Ilm,Passau,199840.6
-558,Pfaffenhofen a.d. Ilm,Deggendorf,151830.3
-559,Pfaffenhofen a.d. Ilm,Burghausen,152307.9
-560,Pfaffenhofen a.d. Ilm,"Weißenburg, Bayern",92820.6
-561,Pfaffenhofen a.d. Ilm,Freising,30983.9
-562,Pfaffenhofen a.d. Ilm,Moosburg a.d. Isar,38430.4
-563,Pfaffenhofen a.d. Ilm,Vilsbiburg,97854.5
-564,Pfaffenhofen a.d. Ilm,Landau a.d. Isar,127534.1
-565,Pfaffenhofen a.d. Ilm,Mainburg,30386.2
-566,Pfaffenhofen a.d. Ilm,Abensberg,52334.6
-567,Pfaffenhofen a.d. Ilm,Schierling,74874.1
-568,Pfaffenhofen a.d. Ilm,Schrobenhausen,22178.2
-569,Pfaffenhofen a.d. Ilm,Erding,56609.0
-570,Pfaffenhofen a.d. Ilm,Pfarrkirchen,164083.2
-571,Pfaffenhofen a.d. Ilm,Osterhofen,157789.8
-572,Pfaffenhofen a.d. Ilm,Eichstätt,67858.6
-573,Pfaffenhofen a.d. Ilm,Neuburg a.d. Donau,41052.0
-574,Pfaffenhofen a.d. Ilm,Kösching,44761.3
-575,Pfaffenhofen a.d. Ilm,Pfaffenhofen a.d. Ilm,0.0
+0,München,München,0.0
+1,München,Augsburg,67346.3
+2,München,Ingolstadt,80926.2
+3,München,Regensburg,126235.2
+4,München,Landshut,74959.9
+5,München,Straubing,143965.8
+6,München,Passau,192449.5
+7,München,Deggendorf,146330.2
+8,München,Burghausen,113182.0
+9,München,"Weißenburg, Bayern",137013.7
+10,München,Freising,41288.4
+11,München,Moosburg a.d. Isar,55917.4
+12,München,Vilsbiburg,81119.9
+13,München,Landau a.d. Isar,122216.0
+14,München,Mainburg,71788.6
+15,München,Abensberg,94578.7
+16,München,Schierling,114422.4
+17,München,Schrobenhausen,77884.0
+18,München,Erding,44190.6
+19,München,Pfarrkirchen,125060.1
+20,München,Osterhofen,151966.4
+21,München,Eichstätt,110242.9
+22,München,Neuburg a.d. Donau,96911.8
+23,München,Kösching,87337.8
+24,München,Pfaffenhofen a.d. Ilm,54178.3
+25,Augsburg,Augsburg,0.0
+26,Augsburg,Ingolstadt,82558.3
+27,Augsburg,Regensburg,148181.3
+28,Augsburg,Landshut,124735.9
+29,Augsburg,Straubing,194521.5
+30,Augsburg,Passau,244460.6
+31,Augsburg,Deggendorf,196450.3
+32,Augsburg,Burghausen,179395.0
+33,Augsburg,"Weißenburg, Bayern",85505.9
+34,Augsburg,Freising,90989.3
+35,Augsburg,Moosburg a.d. Isar,105118.8
+36,Augsburg,Vilsbiburg,142474.5
+37,Augsburg,Landau a.d. Isar,171635.0
+38,Augsburg,Mainburg,93552.5
+39,Augsburg,Abensberg,105013.4
+40,Augsburg,Schierling,138111.8
+41,Augsburg,Schrobenhausen,44597.4
+42,Augsburg,Erding,101053.3
+43,Augsburg,Pfarrkirchen,191166.7
+44,Augsburg,Osterhofen,201385.4
+45,Augsburg,Eichstätt,90975.2
+46,Augsburg,Neuburg a.d. Donau,68910.1
+47,Augsburg,Kösching,90170.1
+48,Augsburg,Pfaffenhofen a.d. Ilm,60735.1
+49,Augsburg,München,67346.3
+50,Ingolstadt,Augsburg,82558.3
+51,Ingolstadt,Ingolstadt,0.0
+52,Ingolstadt,Regensburg,97917.0
+53,Ingolstadt,Landshut,106863.8
+54,Ingolstadt,Straubing,138992.3
+55,Ingolstadt,Passau,214037.6
+56,Ingolstadt,Deggendorf,166367.9
+57,Ingolstadt,Burghausen,179055.8
+58,Ingolstadt,"Weißenburg, Bayern",52742.2
+59,Ingolstadt,Freising,57731.8
+60,Ingolstadt,Moosburg a.d. Isar,65691.8
+61,Ingolstadt,Vilsbiburg,124602.4
+62,Ingolstadt,Landau a.d. Isar,118660.2
+63,Ingolstadt,Mainburg,42877.5
+64,Ingolstadt,Abensberg,44165.4
+65,Ingolstadt,Schierling,87436.8
+66,Ingolstadt,Schrobenhausen,41155.2
+67,Ingolstadt,Erding,84206.3
+68,Ingolstadt,Pfarrkirchen,191203.1
+69,Ingolstadt,Osterhofen,183240.8
+70,Ingolstadt,Eichstätt,27238.1
+71,Ingolstadt,Neuburg a.d. Donau,24075.4
+72,Ingolstadt,Kösching,9626.4
+73,Ingolstadt,Pfaffenhofen a.d. Ilm,38051.8
+74,Ingolstadt,München,80926.2
+75,Regensburg,Augsburg,148181.3
+76,Regensburg,Ingolstadt,97917.0
+77,Regensburg,Regensburg,0.0
+78,Regensburg,Landshut,66776.2
+79,Regensburg,Straubing,46675.9
+80,Regensburg,Passau,121721.2
+81,Regensburg,Deggendorf,74051.5
+82,Regensburg,Burghausen,146436.1
+83,Regensburg,"Weißenburg, Bayern",147853.1
+84,Regensburg,Freising,104919.7
+85,Regensburg,Moosburg a.d. Isar,85742.1
+86,Regensburg,Vilsbiburg,84610.7
+87,Regensburg,Landau a.d. Isar,75882.6
+88,Regensburg,Mainburg,57308.4
+89,Regensburg,Abensberg,42583.1
+90,Regensburg,Schierling,28398.0
+91,Regensburg,Schrobenhausen,106778.2
+92,Regensburg,Erding,107800.8
+93,Regensburg,Pfarrkirchen,112451.3
+94,Regensburg,Osterhofen,91884.2
+95,Regensburg,Eichstätt,90723.4
+96,Regensburg,Neuburg a.d. Donau,113902.6
+97,Regensburg,Kösching,74015.9
+98,Regensburg,Pfaffenhofen a.d. Ilm,84995.0
+99,Regensburg,München,126235.2
+100,Landshut,Augsburg,124735.9
+101,Landshut,Ingolstadt,106863.8
+102,Landshut,Regensburg,66776.2
+103,Landshut,Landshut,0.0
+104,Landshut,Straubing,72065.4
+105,Landshut,Passau,122004.5
+106,Landshut,Deggendorf,73994.2
+107,Landshut,Burghausen,83156.0
+108,Landshut,"Weißenburg, Bayern",130105.9
+109,Landshut,Freising,40455.1
+110,Landshut,Moosburg a.d. Isar,21277.5
+111,Landshut,Vilsbiburg,21330.6
+112,Landshut,Landau a.d. Isar,49567.8
+113,Landshut,Mainburg,37114.4
+114,Landshut,Abensberg,51163.4
+115,Landshut,Schierling,41774.1
+116,Landshut,Schrobenhausen,100740.7
+117,Landshut,Erding,43012.1
+118,Landshut,Pfarrkirchen,72033.0
+119,Landshut,Osterhofen,79318.2
+120,Landshut,Eichstätt,136180.5
+121,Landshut,Neuburg a.d. Donau,122849.4
+122,Landshut,Kösching,75052.9
+123,Landshut,Pfaffenhofen a.d. Ilm,80115.9
+124,Landshut,München,74959.9
+125,Straubing,Augsburg,194521.5
+126,Straubing,Ingolstadt,138992.3
+127,Straubing,Regensburg,46675.9
+128,Straubing,Landshut,72065.4
+129,Straubing,Straubing,0.0
+130,Straubing,Passau,88138.1
+131,Straubing,Deggendorf,40468.4
+132,Straubing,Burghausen,103256.1
+133,Straubing,"Weißenburg, Bayern",187731.3
+134,Straubing,Freising,109461.2
+135,Straubing,Moosburg a.d. Isar,90283.6
+136,Straubing,Vilsbiburg,70157.0
+137,Straubing,Landau a.d. Isar,31143.1
+138,Straubing,Mainburg,98383.7
+139,Straubing,Abensberg,83658.4
+140,Straubing,Schierling,40420.8
+141,Straubing,Schrobenhausen,147853.5
+142,Straubing,Erding,112797.7
+143,Straubing,Pfarrkirchen,67711.9
+144,Straubing,Osterhofen,58387.0
+145,Straubing,Eichstätt,131798.7
+146,Straubing,Neuburg a.d. Donau,154977.9
+147,Straubing,Kösching,115091.2
+148,Straubing,Pfaffenhofen a.d. Ilm,126070.3
+149,Straubing,München,143965.8
+150,Passau,Augsburg,244460.6
+151,Passau,Ingolstadt,214037.6
+152,Passau,Regensburg,121721.2
+153,Passau,Landshut,122004.5
+154,Passau,Straubing,88138.1
+155,Passau,Passau,0.0
+156,Passau,Deggendorf,52734.7
+157,Passau,Burghausen,84210.2
+158,Passau,"Weißenburg, Bayern",261615.8
+159,Passau,Freising,157944.8
+160,Passau,Moosburg a.d. Isar,138767.2
+161,Passau,Vilsbiburg,107669.9
+162,Passau,Landau a.d. Isar,81511.9
+163,Passau,Mainburg,150097.7
+164,Passau,Abensberg,158703.7
+165,Passau,Schierling,141408.9
+166,Passau,Schrobenhausen,222898.8
+167,Passau,Erding,162736.8
+168,Passau,Pfarrkirchen,58528.2
+169,Passau,Osterhofen,39141.6
+170,Passau,Eichstätt,206844.0
+171,Passau,Neuburg a.d. Donau,230023.2
+172,Passau,Kösching,190136.5
+173,Passau,Pfaffenhofen a.d. Ilm,199840.6
+174,Passau,München,192449.5
+175,Deggendorf,Augsburg,196450.3
+176,Deggendorf,Ingolstadt,166367.9
+177,Deggendorf,Regensburg,74051.5
+178,Deggendorf,Landshut,73994.2
+179,Deggendorf,Straubing,40468.4
+180,Deggendorf,Passau,52734.7
+181,Deggendorf,Deggendorf,0.0
+182,Deggendorf,Burghausen,106036.6
+183,Deggendorf,"Weißenburg, Bayern",213838.0
+184,Deggendorf,Freising,111825.5
+185,Deggendorf,Moosburg a.d. Isar,92647.9
+186,Deggendorf,Vilsbiburg,72521.2
+187,Deggendorf,Landau a.d. Isar,33501.6
+188,Deggendorf,Mainburg,102087.5
+189,Deggendorf,Abensberg,111034.0
+190,Deggendorf,Schierling,93398.6
+191,Deggendorf,Schrobenhausen,175229.1
+192,Deggendorf,Erding,114726.5
+193,Deggendorf,Pfarrkirchen,70070.3
+194,Deggendorf,Osterhofen,24645.0
+195,Deggendorf,Eichstätt,159174.3
+196,Deggendorf,Neuburg a.d. Donau,182353.5
+197,Deggendorf,Kösching,142466.8
+198,Deggendorf,Pfaffenhofen a.d. Ilm,151830.3
+199,Deggendorf,München,146330.2
+200,Burghausen,Augsburg,179395.0
+201,Burghausen,Ingolstadt,179055.8
+202,Burghausen,Regensburg,146436.1
+203,Burghausen,Landshut,83156.0
+204,Burghausen,Straubing,103256.1
+205,Burghausen,Passau,84210.2
+206,Burghausen,Deggendorf,106036.6
+207,Burghausen,Burghausen,0.0
+208,Burghausen,"Weißenburg, Bayern",234093.9
+209,Burghausen,Freising,115626.5
+210,Burghausen,Moosburg a.d. Isar,106241.1
+211,Burghausen,Vilsbiburg,60706.6
+212,Burghausen,Landau a.d. Isar,74609.6
+213,Burghausen,Mainburg,116731.8
+214,Burghausen,Abensberg,130780.8
+215,Burghausen,Schierling,121434.0
+216,Burghausen,Schrobenhausen,172932.7
+217,Burghausen,Erding,92395.9
+218,Burghausen,Pfarrkirchen,40513.4
+219,Burghausen,Osterhofen,78318.1
+220,Burghausen,Eichstätt,208372.5
+221,Burghausen,Neuburg a.d. Donau,195041.4
+222,Burghausen,Kösching,185467.5
+223,Burghausen,Pfaffenhofen a.d. Ilm,152307.9
+224,Burghausen,München,113182.0
+225,"Weißenburg, Bayern",Augsburg,85505.9
+226,"Weißenburg, Bayern",Ingolstadt,52742.2
+227,"Weißenburg, Bayern",Regensburg,147853.1
+228,"Weißenburg, Bayern",Landshut,130105.9
+229,"Weißenburg, Bayern",Straubing,187731.3
+230,"Weißenburg, Bayern",Passau,261615.8
+231,"Weißenburg, Bayern",Deggendorf,213838.0
+232,"Weißenburg, Bayern",Burghausen,234093.9
+233,"Weißenburg, Bayern","Weißenburg, Bayern",0.0
+234,"Weißenburg, Bayern",Freising,113819.3
+235,"Weißenburg, Bayern",Moosburg a.d. Isar,121779.3
+236,"Weißenburg, Bayern",Vilsbiburg,180689.9
+237,"Weißenburg, Bayern",Landau a.d. Isar,217524.5
+238,"Weißenburg, Bayern",Mainburg,97646.3
+239,"Weißenburg, Bayern",Abensberg,97173.8
+240,"Weißenburg, Bayern",Schierling,163298.7
+241,"Weißenburg, Bayern",Schrobenhausen,71377.1
+242,"Weißenburg, Bayern",Erding,138975.1
+243,"Weißenburg, Bayern",Pfarrkirchen,245972.0
+244,"Weißenburg, Bayern",Osterhofen,233526.2
+245,"Weißenburg, Bayern",Eichstätt,28033.1
+246,"Weißenburg, Bayern",Neuburg a.d. Donau,47531.9
+247,"Weißenburg, Bayern",Kösching,53203.3
+248,"Weißenburg, Bayern",Pfaffenhofen a.d. Ilm,92820.6
+249,"Weißenburg, Bayern",München,137013.7
+250,Freising,Augsburg,90989.3
+251,Freising,Ingolstadt,57731.8
+252,Freising,Regensburg,104919.7
+253,Freising,Landshut,40455.1
+254,Freising,Straubing,109461.2
+255,Freising,Passau,157944.8
+256,Freising,Deggendorf,111825.5
+257,Freising,Burghausen,115626.5
+258,Freising,"Weißenburg, Bayern",113819.3
+259,Freising,Freising,0.0
+260,Freising,Moosburg a.d. Isar,17623.8
+261,Freising,Vilsbiburg,59429.6
+262,Freising,Landau a.d. Isar,87711.3
+263,Freising,Mainburg,31323.8
+264,Freising,Abensberg,71384.4
+265,Freising,Schierling,79917.6
+266,Freising,Schrobenhausen,45381.6
+267,Freising,Erding,20993.8
+268,Freising,Pfarrkirchen,108479.3
+269,Freising,Osterhofen,117461.7
+270,Freising,Eichstätt,87048.5
+271,Freising,Neuburg a.d. Donau,73717.4
+272,Freising,Kösching,64143.4
+273,Freising,Pfaffenhofen a.d. Ilm,30983.9
+274,Freising,München,41288.4
+275,Moosburg a.d. Isar,Augsburg,105118.8
+276,Moosburg a.d. Isar,Ingolstadt,65691.8
+277,Moosburg a.d. Isar,Regensburg,85742.1
+278,Moosburg a.d. Isar,Landshut,21277.5
+279,Moosburg a.d. Isar,Straubing,90283.6
+280,Moosburg a.d. Isar,Passau,138767.2
+281,Moosburg a.d. Isar,Deggendorf,92647.9
+282,Moosburg a.d. Isar,Burghausen,106241.1
+283,Moosburg a.d. Isar,"Weißenburg, Bayern",121779.3
+284,Moosburg a.d. Isar,Freising,17623.8
+285,Moosburg a.d. Isar,Moosburg a.d. Isar,0.0
+286,Moosburg a.d. Isar,Vilsbiburg,38262.1
+287,Moosburg a.d. Isar,Landau a.d. Isar,68533.7
+288,Moosburg a.d. Isar,Mainburg,26697.4
+289,Moosburg a.d. Isar,Abensberg,49426.9
+290,Moosburg a.d. Isar,Schierling,60740.0
+291,Moosburg a.d. Isar,Schrobenhausen,57314.2
+292,Moosburg a.d. Isar,Erding,21132.9
+293,Moosburg a.d. Isar,Pfarrkirchen,88917.3
+294,Moosburg a.d. Isar,Osterhofen,98284.1
+295,Moosburg a.d. Isar,Eichstätt,95008.5
+296,Moosburg a.d. Isar,Neuburg a.d. Donau,81677.4
+297,Moosburg a.d. Isar,Kösching,72103.5
+298,Moosburg a.d. Isar,Pfaffenhofen a.d. Ilm,38430.4
+299,Moosburg a.d. Isar,München,55917.4
+300,Vilsbiburg,Augsburg,142474.5
+301,Vilsbiburg,Ingolstadt,124602.4
+302,Vilsbiburg,Regensburg,84610.7
+303,Vilsbiburg,Landshut,21330.6
+304,Vilsbiburg,Straubing,70157.0
+305,Vilsbiburg,Passau,107669.9
+306,Vilsbiburg,Deggendorf,72521.2
+307,Vilsbiburg,Burghausen,60706.6
+308,Vilsbiburg,"Weißenburg, Bayern",180689.9
+309,Vilsbiburg,Freising,59429.6
+310,Vilsbiburg,Moosburg a.d. Isar,38262.1
+311,Vilsbiburg,Vilsbiburg,0.0
+312,Vilsbiburg,Landau a.d. Isar,48407.0
+313,Vilsbiburg,Mainburg,54906.4
+314,Vilsbiburg,Abensberg,68955.4
+315,Vilsbiburg,Schierling,59608.6
+316,Vilsbiburg,Schrobenhausen,118479.3
+317,Vilsbiburg,Erding,41522.4
+318,Vilsbiburg,Pfarrkirchen,49375.2
+319,Vilsbiburg,Osterhofen,71678.2
+320,Vilsbiburg,Eichstätt,153919.1
+321,Vilsbiburg,Neuburg a.d. Donau,140588.0
+322,Vilsbiburg,Kösching,92844.9
+323,Vilsbiburg,Pfaffenhofen a.d. Ilm,97854.5
+324,Vilsbiburg,München,81119.9
+325,Landau a.d. Isar,Augsburg,171635.0
+326,Landau a.d. Isar,Ingolstadt,118660.2
+327,Landau a.d. Isar,Regensburg,75882.6
+328,Landau a.d. Isar,Landshut,49567.8
+329,Landau a.d. Isar,Straubing,31143.1
+330,Landau a.d. Isar,Passau,81511.9
+331,Landau a.d. Isar,Deggendorf,33501.6
+332,Landau a.d. Isar,Burghausen,74609.6
+333,Landau a.d. Isar,"Weißenburg, Bayern",217524.5
+334,Landau a.d. Isar,Freising,87711.3
+335,Landau a.d. Isar,Moosburg a.d. Isar,68533.7
+336,Landau a.d. Isar,Vilsbiburg,48407.0
+337,Landau a.d. Isar,Landau a.d. Isar,0.0
+338,Landau a.d. Isar,Mainburg,77791.2
+339,Landau a.d. Isar,Abensberg,99288.7
+340,Landau a.d. Isar,Schierling,69102.4
+341,Landau a.d. Isar,Schrobenhausen,127662.9
+342,Landau a.d. Isar,Erding,90430.3
+343,Landau a.d. Isar,Pfarrkirchen,38020.7
+344,Landau a.d. Isar,Osterhofen,38017.8
+345,Landau a.d. Isar,Eichstätt,148118.4
+346,Landau a.d. Isar,Neuburg a.d. Donau,134787.3
+347,Landau a.d. Isar,Kösching,115729.7
+348,Landau a.d. Isar,Pfaffenhofen a.d. Ilm,127534.1
+349,Landau a.d. Isar,München,122216.0
+350,Mainburg,Augsburg,93552.5
+351,Mainburg,Ingolstadt,42877.5
+352,Mainburg,Regensburg,57308.4
+353,Mainburg,Landshut,37114.4
+354,Mainburg,Straubing,98383.7
+355,Mainburg,Passau,150097.7
+356,Mainburg,Deggendorf,102087.5
+357,Mainburg,Burghausen,116731.8
+358,Mainburg,"Weißenburg, Bayern",97646.3
+359,Mainburg,Freising,31323.8
+360,Mainburg,Moosburg a.d. Isar,26697.4
+361,Mainburg,Vilsbiburg,54906.4
+362,Mainburg,Landau a.d. Isar,77791.2
+363,Mainburg,Mainburg,0.0
+364,Mainburg,Abensberg,24035.4
+365,Mainburg,Schierling,46523.6
+366,Mainburg,Schrobenhausen,52169.5
+367,Mainburg,Erding,49709.1
+368,Mainburg,Pfarrkirchen,105509.8
+369,Mainburg,Osterhofen,107567.5
+370,Mainburg,Eichstätt,72625.0
+371,Mainburg,Neuburg a.d. Donau,59293.9
+372,Mainburg,Kösching,49719.9
+373,Mainburg,Pfaffenhofen a.d. Ilm,30386.2
+374,Mainburg,München,71788.6
+375,Abensberg,Augsburg,105013.4
+376,Abensberg,Ingolstadt,44165.4
+377,Abensberg,Regensburg,42583.1
+378,Abensberg,Landshut,51163.4
+379,Abensberg,Straubing,83658.4
+380,Abensberg,Passau,158703.7
+381,Abensberg,Deggendorf,111034.0
+382,Abensberg,Burghausen,130780.8
+383,Abensberg,"Weißenburg, Bayern",97173.8
+384,Abensberg,Freising,71384.4
+385,Abensberg,Moosburg a.d. Isar,49426.9
+386,Abensberg,Vilsbiburg,68955.4
+387,Abensberg,Landau a.d. Isar,99288.7
+388,Abensberg,Mainburg,24035.4
+389,Abensberg,Abensberg,0.0
+390,Abensberg,Schierling,32686.1
+391,Abensberg,Schrobenhausen,62112.5
+392,Abensberg,Erding,82950.5
+393,Abensberg,Pfarrkirchen,136457.4
+394,Abensberg,Osterhofen,128490.2
+395,Abensberg,Eichstätt,69578.8
+396,Abensberg,Neuburg a.d. Donau,59002.4
+397,Abensberg,Kösching,37378.7
+398,Abensberg,Pfaffenhofen a.d. Ilm,52334.6
+399,Abensberg,München,94578.7
+400,Schierling,Augsburg,138111.8
+401,Schierling,Ingolstadt,87436.8
+402,Schierling,Regensburg,28398.0
+403,Schierling,Landshut,41774.1
+404,Schierling,Straubing,40420.8
+405,Schierling,Passau,141408.9
+406,Schierling,Deggendorf,93398.6
+407,Schierling,Burghausen,121434.0
+408,Schierling,"Weißenburg, Bayern",163298.7
+409,Schierling,Freising,79917.6
+410,Schierling,Moosburg a.d. Isar,60740.0
+411,Schierling,Vilsbiburg,59608.6
+412,Schierling,Landau a.d. Isar,69102.4
+413,Schierling,Mainburg,46523.6
+414,Schierling,Abensberg,32686.1
+415,Schierling,Schierling,0.0
+416,Schierling,Schrobenhausen,96657.4
+417,Schierling,Erding,82009.5
+418,Schierling,Pfarrkirchen,106378.0
+419,Schierling,Osterhofen,99559.7
+420,Schierling,Eichstätt,117112.9
+421,Schierling,Neuburg a.d. Donau,103781.8
+422,Schierling,Kösching,63895.1
+423,Schierling,Pfaffenhofen a.d. Ilm,74874.1
+424,Schierling,München,114422.4
+425,Schrobenhausen,Augsburg,44597.4
+426,Schrobenhausen,Ingolstadt,41155.2
+427,Schrobenhausen,Regensburg,106778.2
+428,Schrobenhausen,Landshut,100740.7
+429,Schrobenhausen,Straubing,147853.5
+430,Schrobenhausen,Passau,222898.8
+431,Schrobenhausen,Deggendorf,175229.1
+432,Schrobenhausen,Burghausen,172932.7
+433,Schrobenhausen,"Weißenburg, Bayern",71377.1
+434,Schrobenhausen,Freising,45381.6
+435,Schrobenhausen,Moosburg a.d. Isar,57314.2
+436,Schrobenhausen,Vilsbiburg,118479.3
+437,Schrobenhausen,Landau a.d. Isar,127662.9
+438,Schrobenhausen,Mainburg,52169.5
+439,Schrobenhausen,Abensberg,62112.5
+440,Schrobenhausen,Schierling,96657.4
+441,Schrobenhausen,Schrobenhausen,0.0
+442,Schrobenhausen,Erding,77901.5
+443,Schrobenhausen,Pfarrkirchen,184898.4
+444,Schrobenhausen,Osterhofen,192556.3
+445,Schrobenhausen,Eichstätt,46730.5
+446,Schrobenhausen,Neuburg a.d. Donau,25634.5
+447,Schrobenhausen,Kösching,48810.6
+448,Schrobenhausen,Pfaffenhofen a.d. Ilm,22178.2
+449,Schrobenhausen,München,77884.0
+450,Erding,Augsburg,101053.3
+451,Erding,Ingolstadt,84206.3
+452,Erding,Regensburg,107800.8
+453,Erding,Landshut,43012.1
+454,Erding,Straubing,112797.7
+455,Erding,Passau,162736.8
+456,Erding,Deggendorf,114726.5
+457,Erding,Burghausen,92395.9
+458,Erding,"Weißenburg, Bayern",138975.1
+459,Erding,Freising,20993.8
+460,Erding,Moosburg a.d. Isar,21132.9
+461,Erding,Vilsbiburg,41522.4
+462,Erding,Landau a.d. Isar,90430.3
+463,Erding,Mainburg,49709.1
+464,Erding,Abensberg,82950.5
+465,Erding,Schierling,82009.5
+466,Erding,Schrobenhausen,77901.5
+467,Erding,Erding,0.0
+468,Erding,Pfarrkirchen,104595.8
+469,Erding,Osterhofen,119221.0
+470,Erding,Eichstätt,112673.6
+471,Erding,Neuburg a.d. Donau,99342.5
+472,Erding,Kösching,89768.5
+473,Erding,Pfaffenhofen a.d. Ilm,56609.0
+474,Erding,München,44190.6
+475,Pfarrkirchen,Augsburg,191166.7
+476,Pfarrkirchen,Ingolstadt,191203.1
+477,Pfarrkirchen,Regensburg,112451.3
+478,Pfarrkirchen,Landshut,72033.0
+479,Pfarrkirchen,Straubing,67711.9
+480,Pfarrkirchen,Passau,58528.2
+481,Pfarrkirchen,Deggendorf,70070.3
+482,Pfarrkirchen,Burghausen,40513.4
+483,Pfarrkirchen,"Weißenburg, Bayern",245972.0
+484,Pfarrkirchen,Freising,108479.3
+485,Pfarrkirchen,Moosburg a.d. Isar,88917.3
+486,Pfarrkirchen,Vilsbiburg,49375.2
+487,Pfarrkirchen,Landau a.d. Isar,38020.7
+488,Pfarrkirchen,Mainburg,105509.8
+489,Pfarrkirchen,Abensberg,136457.4
+490,Pfarrkirchen,Schierling,106378.0
+491,Pfarrkirchen,Schrobenhausen,184898.4
+492,Pfarrkirchen,Erding,104595.8
+493,Pfarrkirchen,Pfarrkirchen,0.0
+494,Pfarrkirchen,Osterhofen,37917.4
+495,Pfarrkirchen,Eichstätt,220147.8
+496,Pfarrkirchen,Neuburg a.d. Donau,206816.7
+497,Pfarrkirchen,Kösching,197242.8
+498,Pfarrkirchen,Pfaffenhofen a.d. Ilm,164083.2
+499,Pfarrkirchen,München,125060.1
+500,Osterhofen,Augsburg,201385.4
+501,Osterhofen,Ingolstadt,183240.8
+502,Osterhofen,Regensburg,91884.2
+503,Osterhofen,Landshut,79318.2
+504,Osterhofen,Straubing,58387.0
+505,Osterhofen,Passau,39141.6
+506,Osterhofen,Deggendorf,24645.0
+507,Osterhofen,Burghausen,78318.1
+508,Osterhofen,"Weißenburg, Bayern",233526.2
+509,Osterhofen,Freising,117461.7
+510,Osterhofen,Moosburg a.d. Isar,98284.1
+511,Osterhofen,Vilsbiburg,71678.2
+512,Osterhofen,Landau a.d. Isar,38017.8
+513,Osterhofen,Mainburg,107567.5
+514,Osterhofen,Abensberg,128490.2
+515,Osterhofen,Schierling,99559.7
+516,Osterhofen,Schrobenhausen,192556.3
+517,Osterhofen,Erding,119221.0
+518,Osterhofen,Pfarrkirchen,37917.4
+519,Osterhofen,Osterhofen,0.0
+520,Osterhofen,Eichstätt,177562.7
+521,Osterhofen,Neuburg a.d. Donau,200741.9
+522,Osterhofen,Kösching,160855.2
+523,Osterhofen,Pfaffenhofen a.d. Ilm,157789.8
+524,Osterhofen,München,151966.4
+525,Eichstätt,Augsburg,90975.2
+526,Eichstätt,Ingolstadt,27238.1
+527,Eichstätt,Regensburg,90723.4
+528,Eichstätt,Landshut,136180.5
+529,Eichstätt,Straubing,131798.7
+530,Eichstätt,Passau,206844.0
+531,Eichstätt,Deggendorf,159174.3
+532,Eichstätt,Burghausen,208372.5
+533,Eichstätt,"Weißenburg, Bayern",28033.1
+534,Eichstätt,Freising,87048.5
+535,Eichstätt,Moosburg a.d. Isar,95008.5
+536,Eichstätt,Vilsbiburg,153919.1
+537,Eichstätt,Landau a.d. Isar,148118.4
+538,Eichstätt,Mainburg,72625.0
+539,Eichstätt,Abensberg,69578.8
+540,Eichstätt,Schierling,117112.9
+541,Eichstätt,Schrobenhausen,46730.5
+542,Eichstätt,Erding,112673.6
+543,Eichstätt,Pfarrkirchen,220147.8
+544,Eichstätt,Osterhofen,177562.7
+545,Eichstätt,Eichstätt,0.0
+546,Eichstätt,Neuburg a.d. Donau,22569.9
+547,Eichstätt,Kösching,28241.2
+548,Eichstätt,Pfaffenhofen a.d. Ilm,67858.6
+549,Eichstätt,München,110242.9
+550,Neuburg a.d. Donau,Augsburg,68910.1
+551,Neuburg a.d. Donau,Ingolstadt,24075.4
+552,Neuburg a.d. Donau,Regensburg,113902.6
+553,Neuburg a.d. Donau,Landshut,122849.4
+554,Neuburg a.d. Donau,Straubing,154977.9
+555,Neuburg a.d. Donau,Passau,230023.2
+556,Neuburg a.d. Donau,Deggendorf,182353.5
+557,Neuburg a.d. Donau,Burghausen,195041.4
+558,Neuburg a.d. Donau,"Weißenburg, Bayern",47531.9
+559,Neuburg a.d. Donau,Freising,73717.4
+560,Neuburg a.d. Donau,Moosburg a.d. Isar,81677.4
+561,Neuburg a.d. Donau,Vilsbiburg,140588.0
+562,Neuburg a.d. Donau,Landau a.d. Isar,134787.3
+563,Neuburg a.d. Donau,Mainburg,59293.9
+564,Neuburg a.d. Donau,Abensberg,59002.4
+565,Neuburg a.d. Donau,Schierling,103781.8
+566,Neuburg a.d. Donau,Schrobenhausen,25634.5
+567,Neuburg a.d. Donau,Erding,99342.5
+568,Neuburg a.d. Donau,Pfarrkirchen,206816.7
+569,Neuburg a.d. Donau,Osterhofen,200741.9
+570,Neuburg a.d. Donau,Eichstätt,22569.9
+571,Neuburg a.d. Donau,Neuburg a.d. Donau,0.0
+572,Neuburg a.d. Donau,Kösching,32462.6
+573,Neuburg a.d. Donau,Pfaffenhofen a.d. Ilm,41052.0
+574,Neuburg a.d. Donau,München,96911.8
+575,Kösching,Augsburg,90170.1
+576,Kösching,Ingolstadt,9626.4
+577,Kösching,Regensburg,74015.9
+578,Kösching,Landshut,75052.9
+579,Kösching,Straubing,115091.2
+580,Kösching,Passau,190136.5
+581,Kösching,Deggendorf,142466.8
+582,Kösching,Burghausen,185467.5
+583,Kösching,"Weißenburg, Bayern",53203.3
+584,Kösching,Freising,64143.4
+585,Kösching,Moosburg a.d. Isar,72103.5
+586,Kösching,Vilsbiburg,92844.9
+587,Kösching,Landau a.d. Isar,115729.7
+588,Kösching,Mainburg,49719.9
+589,Kösching,Abensberg,37378.7
+590,Kösching,Schierling,63895.1
+591,Kösching,Schrobenhausen,48810.6
+592,Kösching,Erding,89768.5
+593,Kösching,Pfarrkirchen,197242.8
+594,Kösching,Osterhofen,160855.2
+595,Kösching,Eichstätt,28241.2
+596,Kösching,Neuburg a.d. Donau,32462.6
+597,Kösching,Kösching,0.0
+598,Kösching,Pfaffenhofen a.d. Ilm,44761.3
+599,Kösching,München,87337.8
+600,Pfaffenhofen a.d. Ilm,Augsburg,60735.1
+601,Pfaffenhofen a.d. Ilm,Ingolstadt,38051.8
+602,Pfaffenhofen a.d. Ilm,Regensburg,84995.0
+603,Pfaffenhofen a.d. Ilm,Landshut,80115.9
+604,Pfaffenhofen a.d. Ilm,Straubing,126070.3
+605,Pfaffenhofen a.d. Ilm,Passau,199840.6
+606,Pfaffenhofen a.d. Ilm,Deggendorf,151830.3
+607,Pfaffenhofen a.d. Ilm,Burghausen,152307.9
+608,Pfaffenhofen a.d. Ilm,"Weißenburg, Bayern",92820.6
+609,Pfaffenhofen a.d. Ilm,Freising,30983.9
+610,Pfaffenhofen a.d. Ilm,Moosburg a.d. Isar,38430.4
+611,Pfaffenhofen a.d. Ilm,Vilsbiburg,97854.5
+612,Pfaffenhofen a.d. Ilm,Landau a.d. Isar,127534.1
+613,Pfaffenhofen a.d. Ilm,Mainburg,30386.2
+614,Pfaffenhofen a.d. Ilm,Abensberg,52334.6
+615,Pfaffenhofen a.d. Ilm,Schierling,74874.1
+616,Pfaffenhofen a.d. Ilm,Schrobenhausen,22178.2
+617,Pfaffenhofen a.d. Ilm,Erding,56609.0
+618,Pfaffenhofen a.d. Ilm,Pfarrkirchen,164083.2
+619,Pfaffenhofen a.d. Ilm,Osterhofen,157789.8
+620,Pfaffenhofen a.d. Ilm,Eichstätt,67858.6
+621,Pfaffenhofen a.d. Ilm,Neuburg a.d. Donau,41052.0
+622,Pfaffenhofen a.d. Ilm,Kösching,44761.3
+623,Pfaffenhofen a.d. Ilm,Pfaffenhofen a.d. Ilm,0.0
+624,Pfaffenhofen a.d. Ilm,München,54178.3
