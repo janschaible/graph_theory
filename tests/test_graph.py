@@ -222,4 +222,4 @@ class TestGraph(AbstractGraphTest):
             frozenset({3,8}),
             frozenset({2,3}),
             frozenset({4,7}),
-        }
+        }        

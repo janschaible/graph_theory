@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import networkx as nx
 from graphs.tree import Tree
@@ -196,3 +197,47 @@ class TestDigraph(AbstractGraphTest):
         print(S)
         print(T)
 
+    def test_zwick_ford_fulkerson(self):
+        r = (math.sqrt(5)-1)/2
+        graph = DiGraph(
+            ("s","d",0,4),
+            ("s","b",0,4),
+            ("s","a",0,4),
+            ("d","c",0,r),
+            ("d","t",0,4),
+            ("c","t",0,4),
+            ("b","c",0,1),
+            ("b","a",0,1),
+            ("a","t",0,4),
+            vertices=["s", "d", "c", "b", "a", "t"]
+        )
+        self.render(graph, "test_zwick_ford_fulkerson", render_capacities=True)
+        f,S,T = graph.ford_and_fulkerson("s", "t")
+        print(f)
+        print(S)
+        print(T)
+
+    def test_auxnet(self):
+        graph = DiGraph(
+            (1,8,7,7),
+            (1,6,0,3),
+            (1,10,3,3),
+            (3,8,0,9),
+            (3,5,0,4),
+            (5,2,7,8),
+            (6,9,0,2),
+            (6,8,0,2),
+            (7,8,0,9),
+            (8,5,7,7),
+            (9,2,3,3),
+            (9,8,0,9),
+            (9,7,0,6),
+            (10,9,3,6),
+            (10,3,0,3),
+            (10,5,0,3),
+            vertices=[1,2,3,4,5,6,7,8,9,10]
+        )
+        _, edges, is_max, depth = graph.auxnet(1,2)
+        print(edges)
+        assert is_max == False
+        assert depth == 6

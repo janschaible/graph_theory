@@ -108,6 +108,13 @@ class DiGraph(Generic[T]):
             if to_index in adjacent:
                 from_indices.append(i)
         return self._resolve_indices(from_indices)
+    
+    def get_predecessors(self, to_index: int) -> list[int]:
+        from_indices = []
+        for i, adjacent in self._adjacency_list.items():
+            if to_index in adjacent:
+                from_indices.append(i)
+        return from_indices
 
     def get_adjacency_list(self)->dict[T, list[T]]:
         adjacency_list:dict[T, list[T]] = {}
@@ -173,9 +180,11 @@ class DiGraph(Generic[T]):
                     matrix[i][j] = 1
         return np.array(matrix)
 
-    def _get_edge_properties(self, from_i:int, to_i:int):
+    def _get_edge_properties(self, from_i:int, to_i:int, **kwargs):
         properties = {}
-        if self.weighted:
+        if kwargs.get("render_capacities", False):
+            properties["label"] = self.capacities[from_i][to_i]
+        elif self.weighted:
             properties["weight"] = self._get_weight_from_index(from_i, to_i)
             properties["label"] = self._get_weight_from_index(from_i, to_i)
         return properties
@@ -209,7 +218,7 @@ class DiGraph(Generic[T]):
             for adjacent in adjacent_list:
                 from_v: T = self.labels[k]
                 to_v: T = self.labels[adjacent]
-                G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent))
+                G.add_edge(str(from_v), str(to_v), **self._get_edge_properties(k, adjacent, **kwargs))
         return G
 
     def render(self, location: str, **kwargs):
@@ -474,8 +483,8 @@ class DiGraph(Generic[T]):
         
         labels: dict[int, Optional[tuple[Optional[int], str, float]]] = {v: None for v in self.get_indices()}
         labels[s] = (None, "-", float("inf"))
-        u: dict[int, bool] = {u: False for u in self.get_indices()}
-        d: dict[int, float] = {u: float("inf") for u in self.get_indices()}
+        u: dict[int, bool] = {u: False for u in self.get_indices()} # u == visited
+        d: dict[int, float] = {u: float("inf") for u in self.get_indices()} # max flow to
 
         while True:
             v = [v for v,label in labels.items() if label is not None and not u[v]].pop()
@@ -517,3 +526,58 @@ class DiGraph(Generic[T]):
         part_1 = [self.labels[v] for v, label in labels.items() if label is not None]
         part_2 = [self.labels[v] for v, label in labels.items() if label is None]
         return f, part_1, part_2
+
+    def auxnet(self, start: T, end: T):
+        start_index = self.get_present_index_of(start)
+        end_index = self.get_present_index_of(end)
+
+        last_layer = [start_index]
+        auxnet_vertices = [start_index]
+        auxnet_edges = []
+        layer = 1
+
+        while True:
+            next_layer = []
+            for v in last_layer:
+                for outgoing in self._adjacency_list[v]:
+                    if outgoing not in auxnet_vertices:
+                        remaining_capacity = self.capacities[v][outgoing] - self.weights[v][outgoing]
+                        if remaining_capacity > 0:
+                            if outgoing not in next_layer:
+                                next_layer.append(outgoing)
+                            auxnet_edges.append((v, outgoing, remaining_capacity))
+                for incoming in self.get_predecessors(v):
+                    if incoming not in auxnet_vertices:
+                        access_flow = self.weights[incoming][v]
+                        if access_flow > 0:
+                            if incoming not in next_layer:
+                                next_layer.append(incoming)
+                            auxnet_edges.append((v, incoming, access_flow))
+
+            if end_index in next_layer:
+                for v in next_layer:
+                    if v == end_index:
+                        continue
+                    # remove any edges that have the vertex from the last layer as target
+                    auxnet_edges = [edge for edge in auxnet_edges if edge[1] != v]
+                next_layer = [end_index]
+
+            layer += 1
+            last_layer = next_layer
+            auxnet_vertices += next_layer
+            if end_index in last_layer or len(next_layer) == 0:
+                break
+        
+        # combine edges so we do not have a multigraph
+        combined_edges: dict[int, dict[int, float]] = {}
+        for edge in auxnet_edges:
+            combined_edges.setdefault(edge[0], {}).setdefault(edge[1], 0)
+            combined_edges[edge[0]][edge[1]] += edge[2]
+        
+        edges: list[tuple[T, T, float, float]] = []
+        for from_v, to_vs in combined_edges.items():
+            for to_v, capacity in to_vs.items():
+                edges.append((self.labels[from_v], self.labels[to_v], 0, capacity))
+
+        is_max, depth = (False, layer) if end_index in last_layer else (True, None)
+        return auxnet_vertices, edges, is_max, depth
